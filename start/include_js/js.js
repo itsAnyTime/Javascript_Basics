@@ -11,13 +11,6 @@ function zwei() {
 // (2) print the type of the value of the expression to the console.
 // (3) print the type of the type of the value of the expression to the console.
 
-//     2 + 2 === 4
-//     2 + 3 === 4
-//     undefined
-//     null
-//     { city: “Hamburg”, country: “Germany” }
-//     function() {}
-
 // (1)
 console.log(2 + 2 === 4);
 console.log(2 + 3 === 4);
@@ -36,7 +29,7 @@ console.log(typeof null);
 console.log(typeof { city: "Hamburg", country: "Germany" });
 console.log(typeof function() {});
 
-// (3)
+// (3) not finish
 console.log(typeof 4);
 console.log(typeof 2 + 3 === 4);
 console.log(typeof undefined);

@@ -1,5 +1,5 @@
 // #### 1. Multiply - Function Declaration
-// * Create a function that multiples a number by another number.
+// * Creates a function that multiplies a number by another number.
 
 function multiply(a,b) {
     return a * b;
@@ -13,7 +13,7 @@ multiplyAgain(3,4);
 
 
 // #### 2. Multiply - Function Declarations as Values
-// * Rework the syntax of the above function so that the function declaration is stored as a value.
+// * Reworked syntax of the above function so that the function declaration is stored as a value.
 
 const multiKonstante = function(a,b) {
     console.log(a*b);
@@ -27,9 +27,9 @@ console.log(multiKonstante2(2,2));
 
 
 // #### 3. Multiply - Arrow Function
-// * Rework the syntax of the function declaration so that is uses the arrow function shorthand.
-// * Erstelle eine Funktion `multiPfeil`, die zwei Zahlen nimmt und das Produkt der beiden ausgibt.
-// * Verwende hier die Pfeil-Schreibweise (`const funktion = ( ... ) => { ... };` ) ohne das Schlüsselwort `function`.
+// * Reworked syntax of the function declaration so that is uses the arrow function shorthand.
+// * Erstellt eine Funktion `multiPfeil`, die zwei Zahlen nimmt und das Produkt der beiden ausgibt.
+// * Verwendet wird hier die Pfeil-Schreibweise (`const funktion = ( ... ) => { ... };` ) ohne das Schlüsselwort `function`.
 
 // syntax variante
 const multiPfeil3 = (parameter1, parameter2) => { 
@@ -55,11 +55,11 @@ multiPfeil2(e,f);
   
 
 // #### 4. Declarations
-// * Create functions (using all three declarations) to check the remainder of division given two numbers. 
+// * Functions (using all three declarations) to check the remainder of division given two numbers. 
 
-// * Erstelle drei Funktionen `restNormal`, `restKonstante` und `restPfeil`.
+// * Drei Funktionen `restNormal`, `restKonstante` und `restPfeil`.
 // * Je die erste auf die "normale" Art, für die zweite die Konstante und die dritte die Pfeilschreibweise.
-// * Die Ausgabe der Funktionen soll der Divisionsrestes für zwei Zahlen sein. (A "modulo" B)
+// * Die Ausgabe der Funktionen ist der Divisionsrest für zwei Zahlen. (A "modulo" B)
 
 
 function restNormal(dividend, divisor) {

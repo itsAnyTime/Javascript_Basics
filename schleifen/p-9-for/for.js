@@ -1,7 +1,6 @@
 // 1. **Addition.**
-// Write a program to add up the numbers 1 to 20.
+// Add up numbers from 1 to 20.
 
-// umschreiben:
 // let j = 1;
 // let summe = 0;
 // while (j <= 20) {
@@ -17,27 +16,33 @@ for (let i = 1; i <= 20; i++) {
   console.log(summe);
 }
 
-// 2. **There are i bottles of beer on the wall.**
-// Write a program that will output, "There is one bottle of beer on the wall." "There are two bottles of beer on the wall" up until there are five bottles.
 
 console.log("task 2 ---------------------");
 
-// how i understood the task:
+// 2. **There are i bottles of beer on the wall.**
+// program that will output, "There is one bottle of beer on the wall." "There are two bottles of beer on the wall". 
+
+// count up:
 for (let j = 1; j <= 5; j++) {
-  console.log("There is", j, "bottle of beer on the wall");
+  if(j === 1) {
+    console.log("There are", j, "bottle of beer on the wall");
+  } else {
+     console.log("There are", j, "bottles of beer on the wall"); 
+  }
 }
+
 console.log("task 2.2 ---------------------");
 
-// what they meant: flaschen von 99 runterzählen bis zur 5.
+// count down: 5 flaschen von 99 runterzählen.
 for (let index = 99; index >= 94; index--) {
-    console.log("There is", index, "bottle of beer on the wall");    
+    console.log("There are", index, "bottles of beer on the wall");    
 }
 
-// 3. **The odd/even reporter.**
-// Write a program that will iterate from 0 to 20. For each iteration, it will check if the current number is even or odd, and report that to the screen (e.g. "2 is even").
 
 console.log("task 3 ---------------------");
 
+// 3. **The odd/even reporter.**
+// Program, that will iterate from 0 to 20. For each iteration, it will check if the current number is even or odd
 
 for (let k = 0; k <= 20; k++) {
   if (k % 2 == 0) {
@@ -52,7 +57,7 @@ for (let k = 0; k <= 20; k++) {
 // or
 console.log("task 3.2 ---------------------");
 
-// not very nice output
+// not very nice output:
 // for (let zahl = 0; zahl <= 20; zahl++) {
 //     console.log(zahl, " ist ", (zahl % 2 == 0) ? "gerade" : "ungerade");
 // }
@@ -64,8 +69,8 @@ for(let ka = 0; ka <= 20; ka++) {
 
 
 // 4. **Multiplication Tables.**
-// Write a program that will iterate from 0 to 10. For each iteration of the for loop, it will multiply the number by 9 and log the result (e.g. "2 * 9 = 18").
-// **Bonus:** Use a nested for loop to show the tables for every multiplier from 1 to 10 (100 results total).
+// Program, that will iterate from 0 to 10. For each iteration of the for loop, it will multiply the number by 9 and log the result (e.g. "2 * 9 = 18").
+// **Bonus:** nested for loop, to show the tables for every multiplier from 1 to 10 (100 results total).
 
 console.log("task 4 ---------------------");
 
@@ -103,7 +108,7 @@ for (let l = 1; l <= 10; l++) {
 
 
 // 5. **Fizz Buzz**
-// Write a program which iterates the integers from 1 to 100. But for multiples of three print "Fizz" instead of the number and for the multiples of five print "Buzz". For numbers which are multiples of both three and five print "FizzBuzz".
+// Program, which iterates the integers from 1 to 100. But for multiples of three it prints "Fizz" instead of the number and for the multiples of five it prints "Buzz". For numbers which are multiples of both three and five it prints "FizzBuzz".
 
 // fizz = 3
 // buzz = 5
@@ -125,7 +130,7 @@ for (let n = 0; n < 100; n++) {
 }
 
 // 6. **Sum of Multiples**
-// Write a program to add the multiples of 3 and 5 under 1000.
+// Program, to add the multiples of 3 and 5 under 1000.
 // (3 + 5 + 6 + 9 + 10 + 12 + 15 .... 1000)
 
 // also alle fizz und buzz und fizzbuzz Zahlen
@@ -188,8 +193,8 @@ console.log("Summe aller Vielfachen von 3 oder 5 ist: "+summeVielfache);
 
 // **Bonus**
 
-// 7. Write programs that produce the following outputs:
-// 7a:
+// 7. programs, that produce the following outputs:
+
 // >100 200 300 400 500 600 700 800 900 1000
 
 for (let hunderter = 0; hunderter < 1000; hunderter) {
@@ -201,7 +206,6 @@ for (let hunderter = 0; hunderter < 1000; hunderter) {
 //     console.log(hunderter);
 // }
 
-// 7b:
 // >0 2 4 6 8 10
 
 for (let zweier = 2; zweier < 11; zweier+=2) {
@@ -213,19 +217,16 @@ for (let gerade = 0; gerade <= 10; gerade++){
     if (gerade % 2 == 0) console.log(gerade);
 }
 
-// 7c:
 // >3 6 9 12 15
 for (let dreier = 3; dreier < 16; dreier+=3) {
     console.log(dreier);
 }
 
-// 7d:
 // >9 8 7 6 5 4 3 2 1 0
 for (let back = 9; back >= 0; back--) {
     console.log(back);
 }
 
-// 7e:
 // >1 1 1 2 2 2 3 3 3 4 4 4
 for (let triple = 1; triple < 5; triple++) {
     console.log(triple, triple, triple);    
@@ -238,7 +239,6 @@ for (let triple2 = 1; triple2 < 5; triple2++) {
     }
 }
 
-// 7f:
 // >0 1 2 3 4 0 1 2 3 4 0 1 2 3 4
 let folgenkette = "";
 for (let folge2 = 0; folge2 < 4; folge2++) {
@@ -247,8 +247,10 @@ for (let folge2 = 0; folge2 < 4; folge2++) {
     }
 } console.log(folgenkette);
 
+
+
 // 8. **isPalindrome.**
-// Write a program to check whether a word is a palindrome or not.
+// Program to check, whether a word is a palindrome or not.
 // Note: a palindrome is a word, phrase, or sequence that reads the same backwards as forwards, e.g. madam or tarrattarrat
 
 let word = "madam";
@@ -267,7 +269,7 @@ if (wahr == true) {
   console.log("It is a Palindrome");
 }
 
-// **Bonus:** Ignoriere ggf., dass der erste Buchstabe in Deutschen Substantiven groß geschrieben ist. (Otto soll also auch als Palindrom zählen)
+// **Bonus:** Ignoriert ggf., dass der erste Buchstabe in Deutschen Substantiven groß geschrieben ist. (Otto soll also auch als Palindrom zählen)
 
 let bigWord = "Madam";
 
@@ -324,7 +326,7 @@ for (let index = 1; index <= (testWort.length / 2); index++) {
     console.log(testWort + " ist kein Palindrom");
 }
 
-// marcus Lösung ohne Schleifen:
+// Marcus Lösung ohne Schleifen:
 // string wird umgedreht
 let str = 'Mauam' 
 let lowRegStr = str.toLowerCase();
@@ -335,7 +337,7 @@ let lowRegStr = str.toLowerCase();
     console.log("Das Word ist kein Palindrom");
   }
 
-// sakir mit Array, modifiziert by me (akzeptiert nun Großbuchstaben):
+// Sakirs mit Array, modifiziert by me (akzeptiert nun Großbuchstaben):
 let sakirStr = "Madam";
 let newString = "";
 
@@ -363,7 +365,7 @@ if(y === xGroß){
 }
 
 
-// Lösung von Christoph B.
+// Lösung von Christoph
 pali = "Osdttto";
 
 if (pali.substr(0, pali.length/2).toLowerCase() ==

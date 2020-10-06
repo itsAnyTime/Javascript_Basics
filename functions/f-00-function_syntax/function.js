@@ -22,7 +22,7 @@ multiply(5, 5); // 25
 
 //////////////////////////////////////////////////////////////////////////
 
-// 1. Erstelle eine Funktion, mit dem du jemanden begrüßen kannst. Die Funktion sollte einen Parameter als Input nehmen, und eine Begrüßung auf der Konsole ausgeben. 
+// 1. Funktion (mit einem Parameter), die jemanden begrüßt. 
 
 function hallo(x) {
     console.log("Hallo", x);
@@ -31,7 +31,7 @@ function hallo(x) {
 hallo("Any"); // Hallo Any
 
 
-// 2. Erstelle eine Funktion, die dein Alter und dein Geburtsjahr auf der Konsole ausgibt.
+// 2. Funktion, die Alter und Geburtsjahr auf der Konsole ausgibt.
 
 function personal(age, born) {
     console.log("Age:", age, "Born:", born);
@@ -40,7 +40,7 @@ function personal(age, born) {
 personal(231, 2392); // Age: 231 Born: 2392
 
 
-// 3. Erstelle eine Funktion, die dein Wohnort und deine Postleitzahl auf der Konsole ausgibst. 
+// 3. Funktion, die ein Wohnort und eine Postleitzahl auf der Konsole ausgibt. 
 
 function place(place, plz) {
     console.log("Ort:", place, "PLZ:", plz);

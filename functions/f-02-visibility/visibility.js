@@ -1,11 +1,8 @@
 // ## 1. Potenzen-Reihe
-// * Schreibe eine Funktion die zwei Werte bekommen kann.
-// * Stell sicher, dass die Werte Zahlen sind.
-// * Ein Wert soll die Basis sein
-// * Ein Wert soll ein maximaler Exponent sein (im Beispiel oben die 3). Das ist auch die Anzahl der Potenzen die ausgegeben werden.
-
-// Wenn Funktion(3 , 5) aufgerufen wird, dann soll die Ausgabe `3 9 27 81 243` sein.
-// Wenn die Funktion(2, 8) aufgerufen wird, dann soll die Ausgabe `2 4 8 16 32 64 128 256` sein.
+// * Funktion, die zwei Werte bekommen kann.
+// * Stellt sicher, dass die Werte Zahlen sind.
+// * Ein Wert ist die Basis 
+// * Ein Wert ist ein maximaler Exponent (im Beispiel oben die 3). Das ist auch die Anzahl der Potenzen die ausgegeben werden.
 
 let basis = 3;
 var zsum = basis;
@@ -55,10 +52,10 @@ console.log("----------------------------------------------------");
 
 // ## 2. Früchte
 
-// * Schreibe eine Funktion `druckeLieblingsFrucht`. 
-// * Definiere eine Variable **außerhalb** der Funktion und weise ihr als Zeichenkette deine Lieblingsfrucht als Wert zu.
-// * Innerhalb des Körpers der Funktion: Weise den Wert der Variable von außerhalb des Körpers, einer neuen Variable innerhalb der Funktion zu.
-// * Gib den Wert deiner inneren Variable auf der Konsole aus mit "Meine Lieblingsfrucht ist: _frucht_ ".
+// * Funktion Lieblingsfrucht 
+// * Definiert eine Variable **außerhalb** der Funktion und weist ihr als Zeichenkette meine Lieblingsfrucht als Wert zu.
+// * Innerhalb des Körpers der Funktion: Weist den Wert der Variable von außerhalb des Körpers, einer neuen Variable innerhalb der Funktion zu.
+// * Gibt den Wert der inneren Variable auf der Konsole aus, mit "Meine Lieblingsfrucht ist: _frucht_ ".
 
 let fruit = "Mango";
 
@@ -79,13 +76,8 @@ druckeLieblingsFrucht2();
 
 // ## 3. Potenz ( Zahl mal sich selbst )
 
-// * Erstelle eine Funktion mit dem Namen `Potenz`.
-// * Die Funktion soll zwei Werte (Zahlen) nehmen können.
-// * Der zweite Wert soll angeben, wie oft der erste Wert mit sich selbst mal genommen wird.
-
-// * Speichere die Ausgabe deiner Funktion in einer Variable namens `Ergebnis`
-
-// * Versuche den Wert deiner Variable `Ergebnis`von außerhalb der Funktion zu benutzen. Ist das überhaupt möglich? Warum/Warum nicht? Schreibe deine Antwort als Kommentar in die JavaScript-Datei.
+// * Funktion, mit dem Namen `Potenz`, die zwei Zahlen Werte nimmt
+// * Der zweite Wert gibt an, wie oft der erste Wert mit sich selbst mal genommen wird.
 
 let wert1 = 2;
 let wert2 = 3;

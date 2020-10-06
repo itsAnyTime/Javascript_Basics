@@ -1,21 +1,21 @@
-// 0. Declare two variables "snackServings" and "guests" and assign them number values.
+// 0. Declares two variables "snackServings" and "guests" and assign them number values.
 let snackServings = 3;
 let guests = 4;
 
-// 1. Add snackServings and guests, and print the result to the console.
+// 1. Adds snackServings and guests, and prints the result to the console.
 console.log(snackServings + guests);
 
-// 2. Subtract guests from snackServings, and print the result to the console. Then, subtract snackServings from guests and print the result to the console.
+// 2. Subtracts guests from snackServings, prints the result to the console. Then, subtracts snackServings from guests and prints the result to the console.
 console.log(snackServings - guests);
 console.log(guests - snackServings);
 
-// 3. Multiply snackServings and guests.
+// 3. Multiplies snackServings and guests.
 console.log(snackServings * guests);
 
-// 4. Divide snackServings by guests.
+// 4. Divides snackServings by guests.
 console.log(snackServings / guests);
 
-// 5. Declare another variable "drinks" with the value "10". Multiply snackServings and guests. Then, divide the result by drinks. Store the result in a new variable named "resultOne".
+// 5. Declares another variable "drinks" with the value "10". Multiplies snackServings and guests. Then, divides the result by drinks.  
 let drinks = 10;
 resultOne = snackServings * guests;
 resultOne = resultOne / drinks;
@@ -26,12 +26,12 @@ let drink = 10;
 resultOne = (snackServings * guests) / drinks;
 console.log(resultOne);
 
-// 6. Declare two variables "monkeys" with the value of 15 and "bananas" with the value of 9. Print the remainder (Rest) when monkeys is divided by bananas.
+// 6. Declares two variables "monkeys" with the value of 15 and "bananas" with the value of 9. Prints the remainder (Rest) when monkeys is divided by bananas.
 let monkeys = 15;
 let bananas = 9;
 console.log("6.", monkeys % bananas);
 
-// 7. Declare another variable "monkeyfights" with the value of 20. Add monkeys and bananas, then multiply the result by monkeyfights. Store the result in variable "resultTwo". Print "resultTwo" to the console.
+// 7. Declares another variable "monkeyfights" with the value of 20. Adds monkeys with bananas, then multiplies the result by monkeyfights. Stores the result in variable "resultTwo". Prints "resultTwo" to the console.
 let monkeyfights = 20;
 let resultTwo = monkeys + bananas;
 resultTwo = resultTwo * monkeyfights;
@@ -41,15 +41,15 @@ console.log(resultTwo);
 let resultTwoPointOne = (monkeys+bananas) *monkeyfights;
 console.log(resultTwoPointOne);
 
-// 8. Increment monkeys. Print the result to the console.
+// 8. Increments monkeys. Prints the result to the console.
 console.log(monkeys);
 console.log(++monkeys);
 
-// 9.  Decrement bananas. Print the result to the console.result
+// 9.  Decrements bananas. Prints the result to the console.result
 console.log(bananas);
 console.log(--bananas);
 
-// 10. Subtract bananas from monkeys and store this in a new variable "happiness". Add happiness and monkeyfights.
+// 10. Subtracts bananas from monkeys and stores this in a new variable "happiness". Adds happiness and monkeyfights.
 let happiness = monkeys - bananas;
 
 // happiness += monkeyfights;
@@ -62,5 +62,5 @@ let happiness = monkeys - bananas;
 console.log(happiness + monkeyfights);
 
 
-// 11. Print the remainder (Rest) when resultOne is divided by resultTwo to the console.
+// 11. Prints the remainder (Rest) when resultOne is divided by resultTwo.
 console.log(resultOne % resultTwo);

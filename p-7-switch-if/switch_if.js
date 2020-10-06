@@ -1,6 +1,6 @@
 // #### 1. Farbanalyse
-// Defiere eine Konstante für einen Farbwert (als Zeichenkette `rot` u.s.w.)
-// Erstelle eine Switch Anweisung, die verschiedene Kommentare für verschiedene Farbmöglichkeiten ausgibt (z.B. rot, blau, grün, gelb)
+// Defiert eine Konstante für einen Farbwert (als Zeichenkette `rot` u.s.w.)
+// Erstellt eine Switch Anweisung, die verschiedene Kommentare für verschiedene Farbmöglichkeiten ausgibt (z.B. rot, blau, grün, gelb)
 // z.B. "Rot ist die Farbe des Blutes", "Grün ist die Farbe des Waldes", etc.
 
 
@@ -21,8 +21,8 @@ switch (color) {
 }
 
 // #### 2. Notenvergabe
-// Definiere eine Konstante für eine Schulnote (z.B. als Zahl von 1 bis 5)
-// Gib verschiedene Kommentare aus, je nach Note (z.B. für 1 : "Super! Weiter so")
+// Definiert eine Konstante für eine Schulnote (z.B. als Zahl von 1 bis 5)
+// Gibt verschiedene Kommentare aus, je nach Note (z.B. für 1 : "Super! Weiter so")
 
 const note = 2;
 
@@ -53,8 +53,8 @@ switch (note) {
 
 
 // #### 3. Früchte
-// Definiere eine Konstante für eine Frucht (als Zeichenkette `Banane` )
-// Erstelle eine Switch Anweisung, die verschiedene Kommentare für verschiedene Werte von Frucht ausgibt (Bananen, Orangen, Erdbeeren, Äpfel, etc.)
+// Definiert eine Konstante für eine Frucht (als Zeichenkette `Banane` )
+// Erstellt eine Switch Anweisung, die verschiedene Kommentare für verschiedene Werte von Frucht ausgibt (Bananen, Orangen, Erdbeeren, Äpfel, etc.)
 
 const fruit = "orange";
 
@@ -80,15 +80,8 @@ switch (fruit) {
 }
 
 // #### 4. Anteilige Vervollständigung.
-// Definiere eine Konstante oder Variable für Werte von 0 bis 100 etwa als `prozentFertig`.
-// Gib verschiedene Kommentare aus, je nach Wert für `prozentFertig`.
-// Überlege ob Du besser **switch** oder **if** nehmen möchtest.
-
-// * "Noch ein langer Weg", bei Werten < 30.
-// * "Wir kommen langsam näher", für Werte zwischen 30 und 50.
-// * "Du kannst es", für Werte zwischen 51 und 80.
-// * "Nur noch ein Stück!", für Werte zwischen 81 und 99.
-// * "Gut gemacht! Du bist da!" für 100.
+// Definiert eine Konstante oder Variable für Werte von 0 bis 100 etwa als `prozentFertig`.
+// Gibt verschiedene Kommentare aus, je nach Wert.
 
 const prozentFertig = 111;
 
@@ -100,7 +93,7 @@ if(prozentFertig < 30) {
     console.log("Du kannst es");
 } else if (prozentFertig >= 81 && prozentFertig <= 99) {
     console.log("Nur noch ein Stück");
-// Lösung sagt zwar prozentFertig > 99, aber gibt dann imo keinen Fall, wo else Eintritt, da eh eine Zahl verlangt wird. Bei 100% sollte eh ende sein, also geht der Vergleich mit 100. 
+// Lösung sagt zwar prozentFertig > 99, aber gibt dann imo keinen Fall, wo else Eintritt, da eh eine Zahl verlangt wird. Bei 100% sollte eh Ende sein, also geht der Vergleich mit 100. 
 } else if (prozentFertig == 100 ) {  
     console.log("Gut gemacht! Du bist da!");
 } else {
@@ -108,6 +101,4 @@ if(prozentFertig < 30) {
  }
 
 // #### 5. Unterschiede
-// * Wann solltest Du `switch` nutzen, statt `if` und `else`? Kommentiere die Antwort in der JS-Datei.
-
 // Switch case bei "begrenzten Alternativen", bei "Vergleichen" und "Wahrheitswerte auswerten", sonst if else.

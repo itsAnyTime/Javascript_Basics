@@ -7,7 +7,7 @@ while (i < 16) {
     console.log(i++);
 }
 
-// 2. while Schleife -> summiere die Zahlen 1-20 und gebe summe aus
+// 2. while Schleife -> summiert die Zahlen 1-20 und gibt summe aus
 let j = 1;
 let summe = 0;
 while (j <= 20) {
@@ -18,15 +18,15 @@ while (j <= 20) {
 
 
 // ## 3. Tue ... während ... (Fuss-gesteuerte Schleife) 
-// Nutze eine `do`, `while` Schleife um auszugeben "Die zahl ist [i]" so lange i kleiner als 20 ist.
+// do-while Schleife, um folgendes auszugeben "Die zahl ist [i]" so lange i kleiner als 20 ist.
 
-// 3. Aufgabe wörtlich genommen: 
 let k = 10;
 do {
     console.log("Zahl", k ,"ist kleiner als 20.");
 } while (k > 20);
 
-///// gemeint ist: liste die Zahlen 1-20 auf, da sie Zahlen unter 20 sind /////////
+// anders:
+// Listet die Zahlen von 1-20 auf 
 
 l = 0;
 do {

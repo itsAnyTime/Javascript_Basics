@@ -1,23 +1,24 @@
-// Q1. In one night, a movie theater sells tickets for 6450 dollars. Each ticket costs 15 dollars. How many tickets were sold? 
-let dollars = 6450;
-let ticketprice = 15;
+// Q1. In one night, a movie theater sells tickets for x dollars. Each ticket costs y dollars. Program shows, how many tickets were sold:
+
+let dollars = 6450; // x
+let ticketprice = 15; // y
 
 let sold = dollars / ticketprice;
 console.log(sold + " Tickets"); // 430 Tickets
 
 
-// Q2. Sylvia's income is 500 dollars per week. How much does Sylvia makes every year?
+// Q2. Program calculates earned dollars per year.
 // 52 weeks per year
-// income = 500 per week; 
-income = 500;
+// income = x; 
+income = 750; // type here your week income
 weeks = 52;
 
-console.log(weeks * income + " dollars"); // 26000 dollars
+console.log(weeks * income + " dollars"); // 39000 dollars
 
 
 // **Percentage**
 
-// Q3. Calculate the percentage of 17/30. Expected output: number%
+// Q3. Calculates the percentage of 17/30. Expected output: number%
 // 30 = 100
 // 17 = 56,67
 percent = 100 / 30 * 17;
@@ -30,13 +31,13 @@ console.log(percent2.toFixed(2) + "%"); // 56.67%
 
 // **Geometry Formulas** 
 
-// Q4. Calculate the perimeter of a square. Assume each side is 4.75cm.
+// Q4. Calculates the perimeter of a square. Each side is 4.75cm.
 side = 4.75;
 console.log("Umfang: " + (perimeter = 4 * side) + " cm");  // Umfang: 19 cm
 console.log("Umfang: " + (perimeter = side + side + side + side) + " cm");  // Umfang: 19 cm
 
 
-// Q5. Calculate the perimeter of a triangle. Assume the length of the sides are 5cm, 6cm, 7cm.
+// Q5. Calculates the perimeter of a triangle. The length of the sides are 5cm, 6cm, 7cm.
 side1 = 5;
 side2 = 6;
 side3 = 7;
@@ -45,11 +46,11 @@ perimeter = side1 + side2 + side3;
 console.log("Umfang triangle: " + perimeter + " cm"); // Umfang triangle: 18 cm
 
 
-// Q6. Calculate the area of a square. Each side is 5cm.
+// Q6. Calculates the area of a square. Each side is 5cm.
 console.log("area of square: " + (5 * 5) + "cm²");  // area of square: 25cm²
 
 
-// Q7. Calculate the area of a triangle. Assume the length of the sides are 5cm, 6cm, 7cm.
+// Q7. Calculates the area of a triangle. Length of the sides are 5cm, 6cm, 7cm.
 a = 5;
 h = 6;
 
@@ -63,7 +64,7 @@ erg = (Math.sqrt(p * (p-5) * (p-6) * (p-7)));
 console.log("area of triangle: " + erg.toFixed(2) + " cm²"); // area of triangle: 14.70 cm²
 
 
-// Q8. Calculate the volume of a cube. Length of each side is 9cm.
+// Q8. Calculates the volume of a cube. Length of each side is 9cm.
 a= 9;
 console.log("volume of cube: " + (a * a * a)); // volume of cube: 729
 
@@ -73,7 +74,7 @@ console.log("volume of cube: " + (Math.pow(9,3))); // volume of cube: 729
 
 // **Consumer Formula**
 
-// Q9. Calculate the three bills including tips:
+// Q9. Calculates the three bills including tips:
 // €22.35 + 10% tip
 // €26.67 + 15% tip
 // €35.92 + 20% tip
@@ -90,8 +91,8 @@ console.log(bill3.toFixed(2) + " dollars"); // 43.10 dollars
 
 // **Average** 
 
-// Q10. The number of hours Noemy worked over the last two weeks are 8, 6, 5, 9, 8, 2, 1, 8.5, 7, 4
-// What is Noemy's average hours worked per day?
+// Q10. The number of hours Mo worked over the last two weeks are 8, 6, 5, 9, 8, 2, 1, 8.5, 7, 4.
+// Program shows the average hours worked per day:
 
 const sum = (8 + 6+ 5+ 9+ 8+ 2+ 1+ 8.5+ 7+ 4);
 // console.log("summe durchschnitt:", sum);
@@ -115,8 +116,7 @@ let anzSum2 = sumArr.length;
 avg_hours2 = sum2 / anzSum2; 
 console.log("summe durchschnitt:", avg_hours2); // summe durchschnitt: 5.85
 
-// Q11. A math student scored 75, 70, 85, 90, 100 on the first five tests he took . After he took his sixth math test, the average is now 85. What did he score on the sixth test?
-// Expected output: Score in the sixth test: --.
+// Q11. A math student scored 75, 70, 85, 90, 100 on the first five tests he took. After he took his sixth math test, the average is now 85. Programm calculates the score from the sixth test.
 
 // avg_hours2 = sum2 / anzSum2; 
 // 85 = 75 + 70 + 85 + 90 + 100 + ? / 6; 
@@ -130,8 +130,7 @@ let newSum = avg_now * anz_tests;
 // console.log("New Sum:", newSum);
 console.log("Score in the sixth test:", newSum - zsum); // Score in the sixth test: 90
 
-// Q12. For James to get a 1st class degree, he needs to get an average of 80% in all 9 of his assessments. He has taken 8 assessments and his average is 78%. What is the minimum percentage he must get in his last assessment to ensure he gets a first class? 
-// Expected output: James needs a minimum of --% to get an 80% average.
+// Q12. For James to get a 1st class degree, he needs to get an average of 80% in all 9 of his assessments. He has taken 8 assessments and his average is 78%. Program calculates the minimum percentage he must get in his last assessment to ensure he gets a first class: 
 
 let minScore = (0.8 * 9 * 100) - (0.78 * 8 * 100);
 console.log(minScore); //96

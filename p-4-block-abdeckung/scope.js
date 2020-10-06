@@ -1,6 +1,5 @@
 // * Weise der Variable `x` verschiedene Werte zu, der abhängig vom Wert einer Variable (Determinator) ist.
 
-
 let determinator =4;
 let x = determinator;
 
@@ -44,9 +43,10 @@ x = (determinator < 0) ? "kleiner als 0" : "größer oder gleich 0";
 console.log("Ternärlösung von x:", x);
 
 
-// * Abhängig vom Wert von Determinator, weise einer anderen Variable (`Updater`) verschiedene Werte zu.
-//  - Wenn Determinator größer oder gleich 0 ist, soll der Wert von `Updater` "Größer oder gleich 0" sein, erstelle eine weitere Variable `Nachricht` und gib ihr den Wert "Positive ganze Zahl" und gib sie aus.
-//  - Wenn Determinator kleiner als 0 ist, soll der Wert von `Updater` "kleiner als 0" sein.
+// * Abhängig vom Wert in Determinator, erhält Variable "Updater" verschiedene Werte:
+//  - Wenn Determinator größer oder gleich 0 ist, wird der Wert von `Updater` "Größer oder gleich 0" sein. 
+//  - Variable "Nachricht" gibt den Wert "Positive ganze Zahl" aus.
+//  - Wenn Determinator kleiner als 0 ist, wird der Wert von `Updater` "kleiner als 0" sein.
 
 let updater = "";
 // let nachricht = "Positive ganze Zahl, oder 0";
@@ -73,16 +73,15 @@ console.log("ternärlösung von updater:", updater);
 
 
 
-//  * **Frage**: Was wird passieren, wenn du `Nachricht` außerhalb des Wenn (if) Blocks ausgibt. Kommentiere die Antwort in Deiner JS-Datei.
-console.log("Außerhalb der if-Schleife:", nachricht);
+//  Unterschied der Ausgabe von `Nachricht` außerhalb und innerhalb des Wenn (if) Blocks: 
     /* Wenn ich die Variable außerhalb der Schleife mit let deklariere, kann drauf zugegriffen werden, und es wird der initialisierte Wert "Positive ganze Zahl" ausgegeben. 
-    Wenn ich nachricht innerhalb der Schleife mit let deklariere, kann von außen nicht zugegriffen werden, die führt zum error: nachricht ist not defined. Abhilfe schafft var, da diese Variablen mit var global sind. */
+    Wenn ich Nachricht innerhalb der Schleife mit let deklariere, kann von außen nicht zugegriffen werden, die führt zum error: nachricht ist not defined. Abhilfe schafft var, da diese Variablen mit var global sind. */
 
 
-// * Wann würdest du eher den Ternären ? Operator verwenden und wann die Wenn (if) Verzweigung? Gib ein Beispiel.
-    /* Aus Gründen der lesbarkeit kann der ternäre Operator klarer sein, in anderen Situationen erreicht man das Gegenteil. */
-// if bei mereren Anweisungen pro Test 
-// if(kundeIstVeganer) {
+// * Lieber if oder Ternären ? Operator?
+    /* Aus Gründen der Lesbarkeit kann der ternäre Operator besser zu verstehen sein, in anderen Situationen erreicht man das Gegenteil. */
+//  if bei mereren Anweisungen pro Test 
+//  if(kundeIstVeganer) {
 //     Hauptbeilage = "Tofu";
 //     Sahne = "Sojamilch";
 //     ...
