@@ -190,21 +190,40 @@ console.log(dictionary("beau", ["pastry", "delicious", "name", "boring"])); // [
 
 
 // **8. Even Number Generator.**
-// Create a function that finds all even numbers from 1 to the given number.
+// Creates a function that finds all even numbers from 1 to the given number.
+// Odd numbers, return an empty array. 0 not included
 
-// hint: arr.filter
+function evenNums(a) {
+    let arr = [];
 
-// Examples:
-// * evenNums(8) ➞ [2, 4, 6, 8]
-// * evenNums(4) ➞ [2, 4]
-// * evenNums(2) ➞ [2]
-// **Notes:** 
-// * If there are no even numbers, return an empty array. 
-// * Do not include 0. 
+    for (let index = 1; index <= a; index++) {
+        arr.push(index);
+    }
+    // console.log(arr);            
+    // check if array content % 2 == 0 is true. If yes, it is an even number. Even numbers goes to the new Array. (filter creates a new Array.)
+    const result = arr.filter(arrContent => arrContent % 2 == 0);
+    console.log(result);
+}
+// filter example #1
+// const result = words.filter(word => word.length > 6);
+// a % 2 == 0  // = gerade
 
-// **Bonus: Alphabetical Order.**
+// filter example #2
+// const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+// const result = words.filter(asdf => asdf.length > 6);
+// console.log(result);
+// // expected output: Array ["exuberant", "destruction", "present"]
+
+evenNums(8) // [2, 4, 6, 8]
+evenNums(4) // [2, 4]
+evenNums(2) // [2]
+evenNums(1) // []
+
+
+// Alphabetical Order.**
 // Create a function to sort a string into alphabetical order. **NB:** assume numbers, symbols and punctuation are not included in the string.
 
-
-
-// i.e. alphaOrder("webdev") ➞ "bdeevw" 
+function alphaOrder(str) {
+    return console.log(str.split('').sort().join(""));
+}
+alphaOrder("webdev") // "bdeevw" 
