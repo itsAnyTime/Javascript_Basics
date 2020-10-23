@@ -1,5 +1,4 @@
-// 1. **Addition.**
-// Add up numbers from 1 to 20.
+// 1. Addition. Numbers from 1 to 20.
 
 // let j = 1;
 // let summe = 0;
@@ -19,7 +18,7 @@ for (let i = 1; i <= 20; i++) {
 
 console.log("task 2 ---------------------");
 
-// 2. **There are i bottles of beer on the wall.**
+// 2. There are i bottles of beer on the wall.
 // program that will output, "There is one bottle of beer on the wall." "There are two bottles of beer on the wall". 
 
 // count up:
@@ -33,7 +32,7 @@ for (let j = 1; j <= 5; j++) {
 
 console.log("task 2.2 ---------------------");
 
-// count down: 5 flaschen von 99 runterzählen.
+// count down: 5 Flaschen von 99 runterzählen.
 for (let index = 99; index >= 94; index--) {
     console.log("There are", index, "bottles of beer on the wall");    
 }
@@ -41,7 +40,7 @@ for (let index = 99; index >= 94; index--) {
 
 console.log("task 3 ---------------------");
 
-// 3. **The odd/even reporter.**
+// 3. The odd/even reporter.
 // Program, that will iterate from 0 to 20. For each iteration, it will check if the current number is even or odd
 
 for (let k = 0; k <= 20; k++) {
@@ -68,7 +67,7 @@ for(let ka = 0; ka <= 20; ka++) {
 }
 
 
-// 4. **Multiplication Tables.**
+// 4. Multiplication Tables.
 // Program, that will iterate from 0 to 10. For each iteration of the for loop, it will multiply the number by 9 and log the result (e.g. "2 * 9 = 18").
 // **Bonus:** nested for loop, to show the tables for every multiplier from 1 to 10 (100 results total).
 
@@ -107,7 +106,7 @@ for (let l = 1; l <= 10; l++) {
 // }
 
 
-// 5. **Fizz Buzz**
+// 5. Fizz Buzz
 // Program, which iterates the integers from 1 to 100. But for multiples of three it prints "Fizz" instead of the number and for the multiples of five it prints "Buzz". For numbers which are multiples of both three and five it prints "FizzBuzz".
 
 // fizz = 3
@@ -129,7 +128,7 @@ for (let n = 0; n < 100; n++) {
   }
 }
 
-// 6. **Sum of Multiples**
+// 6. Sum of Multiples
 // Program, to add the multiples of 3 and 5 under 1000.
 // (3 + 5 + 6 + 9 + 10 + 12 + 15 .... 1000)
 
