@@ -1,6 +1,8 @@
-// push, split, reverse, toString, charAt, join, Math.sign, parseInt/Float, includes, match, indexOf, startWith, filter, foreach, 
+// used: push, split, reverse, toString, charAt, join, Math.sign, parseInt/Float, includes, match, indexOf, startWith, filter, foreach, 
 
-// not ready, not so easy without google
+//not so easy without google
+
+// last task not ready yet
 
 // 1. Function which accepts two arguments: the first argument being an array of numbers, and the second argument being a number. The function should return the elements of the array which are greater than the second argument.
 

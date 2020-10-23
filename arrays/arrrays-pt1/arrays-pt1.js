@@ -1,4 +1,5 @@
-// all done - easy
+// easy - 
+// used: push, splice, concat, reverse, sort, toString, join, subStr, charAt
 
 // 1. Array named "euroCities". Another variable assigned the second item of the array as a value.
 let euroCities = ["Paris", "London", "Valletta", "Prague", "Rome"];
