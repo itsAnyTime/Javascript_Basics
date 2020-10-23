@@ -1,4 +1,4 @@
-// 1. **sumOfNumbers.** Create a program that adds up the numbers in an array (of at least 3 numbers). **Bonus**: Print to screen both the sum and the product of these numbers.
+// 1. **sumOfNumbers.** Program that adds up the numbers in an array (of at least 3 numbers). **Bonus**: Prints to screen both the sum and the product of these numbers.
 
 // 2. **Hello Frien** Create an array filled with your friends' and family's names. Loop over the array and greet each friend e.g. Hello Maria! Hello Mike! etc. **Bonus**: Print the indexes of each item in the array. Expected output example: Mike is at index 1 of my friends array. 
 
