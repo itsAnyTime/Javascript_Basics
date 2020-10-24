@@ -7,15 +7,14 @@ var toDo = pickRandom([
     Freecodecamp,
     math2,
     pb-array-loops,
-    pb-arrays-pt2,
     pb-arrays-pt3,
     start-include-js
 ]);
 console.log(answer);
 
-
-const random = Math.floor(Math.random() * toDo.length);
-console.log(random, toDo[random]);
+// in work
+// const random = Math.floor(Math.random() * toDo.length);
+// console.log(random, toDo[random]);
 
 // not working example
 // Array.prototype.sample = function(){

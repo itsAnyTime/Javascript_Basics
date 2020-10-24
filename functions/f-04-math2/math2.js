@@ -7,9 +7,9 @@ function ganze(a) {
   }
   return sum;
 }
-console.log("Aufgabe 1:", ganze(4));  // 10
-console.log("Aufgabe 1:", ganze(13));  // 91
-console.log("Aufgabe 1:", ganze(600));  // 180300
+console.log("Aufgabe 1:", ganze(4)); // 10
+console.log("Aufgabe 1:", ganze(13)); // 91
+console.log("Aufgabe 1:", ganze(600)); // 180300
 
 // ohne Schleifen:
 
@@ -25,27 +25,28 @@ function ganze2(a) {
   return sum;
 }
 
-console.log("Aufgabe 1 ohne Schleife:", ganze2(4)); 
+console.log("Aufgabe 1 ohne Schleife:", ganze2(4));
 console.log("Aufgabe 1 ganze ohne Schleife:", ganze2(13));
 console.log("Aufgabe 1 ganze ohne Schleife:", ganze2(600));
 
 // B. Cubed. Function with three number parameters, returns sum of its cubes.
 
 let sum2 = 0;
- function sumOfCubes(a, b, c) {
+function sumOfCubes(a, b, c) {
   if (isNaN(a)) {
-      return 0;
-  }  else if (isNaN(b)) {
+    return 0;
+  } else if (isNaN(b)) {
     for (let i = 0; i < 3; i++) {
-        sum2 = a * a * a;
-      } 
-      return sum2;
+      sum2 = a * a * a;
+    }
+    return sum2;
   } else {
-  // 1^3 + 5^3 + 9^3 = 1 + 125 + 729 = 855
-  for (let i = 0; i < 3; i++) {
-    //sum2 = a * a * a + b * b * b + c * c * c;
-    sum2 = (Math.pow(a,3) + Math.pow(b,3) + Math.pow(c,3) )
-  } }
+    // 1^3 + 5^3 + 9^3 = 1 + 125 + 729 = 855
+    for (let i = 0; i < 3; i++) {
+      //sum2 = a * a * a + b * b * b + c * c * c;
+      sum2 = Math.pow(a, 3) + Math.pow(b, 3) + Math.pow(c, 3);
+    }
+  }
   return sum2;
 }
 
@@ -60,9 +61,9 @@ console.log("Aufg. 2:", sumOfCubes()); // 0
 function beginntMit(a, b) {
   var tolerant_string_a = a.toLowerCase();
   var tolerant_string_b = b.toLowerCase();
-  if ( tolerant_string_b.indexOf(tolerant_string_a, 0) === 0) {
-    return true
-  } else return false
+  if (tolerant_string_b.indexOf(tolerant_string_a, 0) === 0) {
+    return true;
+  } else return false;
 }
 
 console.log("Aufg. C:", beginntMit("Bu", "buch")); // true
@@ -71,23 +72,39 @@ console.log("Aufg. C:", beginntMit("Ende", "noch nicht am Ende")); // false
 
 // D: Function - less than or equal to zero. Negative values and 0 return true, otherwise false:
 
+function istKleinerGleich0(zahl) {
+  // if(zahl <= 0) {
+  //   return true;
+  // } else {
+  //   return false;
+  // }
+  // or with ternär:
+  return zahl <= 0 ? true : false;
+}
 
+console.log(istKleinerGleich0(3)); // false
+console.log(istKleinerGleich0(0)); // true
+console.log(istKleinerGleich0(-4)); // true
+console.log(istKleinerGleich0(10)); // false
 
-// Beispiele:
-// * istKleinerGleich0(3) => false
-// * istKleinerGleich0(0) => true
-// * istKleinerGleich0(-4) => true
-// * istKleinerGleich0(10) => false
-
-// **Zusatzfrage für erfahrene Teilnehmer:**
-// Was passiert bei Unendlich und minus Unendlich?
+// Bei plus-unendlichen Zahlen müsste false rauskommen. Bei Minus-unendlich müsste true rauskommen.
 
 // ### 5. Vorkommen zählen.
-// Schreibe eine Funktion die eine Zeichenkette und **ein einzelnes Zeichen** (so könnt ihr mit kette[index] prüfen und müsst keine String-Methoden benutzen) bekommen kann.
-// Die Funktion soll ausgeben, wie oft das Zeichen in der Zeichenkette vorkommt.
+// Funktion mit Zeichenkette und einzelnes Zeichen (so könnt ihr mit kette[index] prüfen und müsst keine String-Methoden benutzen) bekommen kann.
+// Ausgabe: Anzahl der i´s
 
-// Beispiel:
-// * wievieleZeichen("in dieser Zeichenkette","i") => 3
+function wievieleZeichen(str, zeichen) {
+  let total = 0;
+  let neww = str.split("");
+  console.log(neww);
+  for (let index = 0; index < neww.length; index++) {
+    if (neww[index].includes("i")) {  // KEINE Tüttelchen falls es über Parameter kommt :)  
+      total++;
+    }
+  }
+  return total;
+}
+console.log(wievieleZeichen("in dieser Zeichenkette", "i")); //3
 
 // **Zusatz für erfahrene Teilnehmer:**
 // Lass die Funktion das zeichen finden, egal ob es groß oder klein geschrieben wird.
@@ -113,13 +130,15 @@ console.log("Aufg. C:", beginntMit("Ende", "noch nicht am Ende")); // false
 // und so weiter...
 
 // ### 6. X hoch X
-// Erstelle eine Funktion die einen Wert (z.B. x) nimmt, der beim potenzieren sowohl für Basis und Exponent benutzt wird.
-// Die Rückgabe ist also x ^ x (x hoch x).
+// Funktion die einen Wert nimmt, der beim potenzieren sowohl für Basis und Exponent benutzt wird.
 
-// Beispiele:
-// * xHochX(5) => 3125
-// * xHochX(10) => 10000000000
-// * xHochX(3) => 27
+function xHochX(x) {
+  return x ** x; // x hoch x
+}
+
+console.log(xHochX(5)); // 3125
+console.log(xHochX(10)); // 10000000000
+console.log(xHochX(3)); // 27
 
 // **Nebenbedingung:** Du brauchst nur von positiven ganzen Zahlen auszugehen. Argumente kleiner als Null kannst du aber gern probieren.
 
