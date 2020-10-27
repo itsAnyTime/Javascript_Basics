@@ -190,3 +190,42 @@ console.log(cake(11, 5, 3)); // Kuchen reicht nicht aus: false
 console.log(cake(8, 3, 2)); // Kuchen reicht: true
 console.log(cake(8, 3, 3)); // Kuchen reicht nicht aus: false
 console.log(cake(24, 12, 2)); // Kuchen reicht nicht aus: false
+
+/////////////////// EDABIT /////////////////////////////////////
+// -5 Convert Minutes into Seconds
+const convert = (minutes) => minutes * 60
+
+// or mine first
+function convert2(min) {
+	return min * 60;
+}
+
+// -4 Convert Hours into Seconds
+function howManySeconds(hours) {
+	return (hours*60)*60;
+}
+
+// or 
+function howManySeconds(hours) {
+	return hours * 3600;
+}
+
+
+// -3 Create a function that takes the number of wins, draws and losses and calculates the number of points a football team has obtained so far.
+// wins get 3 points
+// draws get 1 point
+// losses get 0 points
+
+function footballPoints(wins, draws, losses) {
+	return (wins*3) + draws;
+}
+
+// -2 Return Something to Me!
+function giveMeSomething(a) {
+	return "something" + " " + a;
+}
+
+// -1 Convert Age to Days
+function calcAge(age) {
+	return age * 365;
+}

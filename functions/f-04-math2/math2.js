@@ -167,10 +167,13 @@ sweet(38,1.3) // "noch 32850 Schokostückchen, damit sie bis zum Lebensende reic
 // ### 9. Finde Walter
 // Schreibe eine Funktion, die eine Zeichenkette nimmt und true zurück gibt, wenn darin Walter gefunden werden kann. false wenn nicht.
 
-// function istWaltraudDa(test) {
+// const found = array1.find(element => element > 10);
 
-//   return test;
-// }
+
+function istWaltraudDa(test) {
+
+  return test;
+}
 
 //istWaltraudDa("Ist Walli hier?") // false
 //istWaltraudDa("Ich habe Waltraud gefunden!") // true

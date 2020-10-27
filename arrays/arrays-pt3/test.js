@@ -18,20 +18,31 @@ let x = number.map(Math.sqrt);  // Math is not working without map , it seems
 console.log(x);
 
 
-console.log("---------forEach-----------");
+console.log("---------forEach-----------");   // TO CHECK
 // next: forEach
 // like a for loop with less code, takes automatic the length of the array
 
-array.forEach(element => { function troy(console.log("hi"));  });
+// array.forEach(element => {
+    
+// });
 
-console.log("--------find------------");
+console.log("--------find------------");  // TO CHECK
 // next: find
 // creates a new array, to work with
+// findet nur die erste Zahl im Array, die größer als 10 ist
+const arr = [53, 36, 85, 4, 34, 445]; 
+const found = arr.find(element => element > 10);  // sucht elemente größer als 10 raus
+console.log(found);  // kommt iwi nur die 53 raus
 
-let arr = [53,36,85,4,34,445];
+// findet nur die erste Zahl im Array, die größer als 10 ist   TO DO: FINDE ALLE
+const array1 = [5, 12, 8, 130, 44];
+let found2 = [];
+found2 = array1.find(element => element > 10);
+console.log(found2); // 12
 
-console.log("-------------");
+
+console.log("-------------");  // TO CHECK for example
 // next: shorter way for bool
 
-return (number === num)
+//return (number === num)
 // same like if else - if return true, else return false

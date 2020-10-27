@@ -41,9 +41,9 @@ function unique(numarray) {
         return numarray[0];
     }
 }
-console.log(unique([0, 1, 1, 1, 1, 1, 1, 1]));
-console.log(unique([3, 3, 3, 7, 3, 3]));
-console.log(unique([0, 0, 0.77, 0, 0]));
+console.log(unique([0, 1, 1, 1, 1, 1, 1, 1])); // 0
+console.log(unique([3, 3, 3, 7, 3, 3])); // 7
+console.log(unique([0, 0, 0.77, 0, 0])); // 0.77
 
 // dci solution:
 function unique(arr) {
@@ -58,7 +58,7 @@ function unique(arr) {
     }
     return myArr;
   }
-  console.log(unique([3, 3, 3, 7, 5, 3, 3]))
+  console.log(unique([3, 3, 3, 7, 5, 3, 3])) // 7, 5
 
 // **5. Word Ranking.**
 // Create a function that takes a string of words and returns the highest scoring word. Each letter of a word scores points according to it's position in the alphabet: a = 1, b = 2, c = 3, etc.
