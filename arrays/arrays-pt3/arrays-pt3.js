@@ -94,6 +94,19 @@ wordRank("Nancy is very pretty.") //"pretty"
 // **6. c4n y0u r34d th15?**
 // Create a function that takes a string as an argument and returns a coded (h4ck3r 5p34k) version of the string. **NB:** for your program to work properly, the function should replace all 'a's with 4, 'e's with 3, 'i's with 1, 'o's with 0, and 's's with 5.
 
+
+// memo
+const hackerSpeak = (str) =>
+  str
+    .replace(/a/gi, 4)
+    .replace(/e/gi, 3)
+    .replace(/i/gi, 1)
+    .replace(/o/gi, 0)
+    .replace(/s/gi, 5)
+    .replace(/g/gi, 9);
+console.log(hackerSpeak("Javascript is awesome"));
+
+
 // Examples:
 // * hackerSpeak("javascript is cool") ➞ "j4v45cr1pt 15 c00l"
 // * hackerSpeak("programming is fun") ➞ "pr0gr4mm1ng 15 fun"
@@ -132,7 +145,55 @@ isSymmetrical(1112111) // true
 
 // **3. Pig Latin Translation.** 
 // Create a function that takes a string of words and moves the first letter of each word to the end of it, then adds 'ay' to the end of the word. This is a basic form of "Pig Latin". 
+// dilshod
+function pigLatin(str) {
+    const lowerCase = str.toLowerCase();
+    const splitStr = lowerCase.split(" ");
+    const vowels = ["a", "e", "i", "o", "u"];
+    const pigTranslation = [];
+    for(let i=0; i<splitStr.length; i++){
+        const firstChar = splitStr[i][0];
+        let remainder = splitStr[i].slice(1);   //
+         if(vowels.includes(firstChar.toLowerCase())){
+             const firstCharVowels = (i ? firstChar: firstChar.toUpperCase()) + remainder + "way";
+             pigTranslation.push(firstCharVowels);
+         } else {
+             if (i === 0){
+                 const firstCharRem = remainder[0];
+                 const wordRemainder = remainder.slice(1); //
+                 remainder = firstCharRem.toUpperCase() + wordRemainder;
+             }
+             const firstCharConsonant = remainder + firstChar + "ay";
+             pigTranslation.push(firstCharConsonant);
+         }
+    }
+    const joinedString = pigTranslation.join(" ");
+    return joinedString;
+}
+console.log(pigLatin("Hello world"));
 
+//maritza
+
+function pigLatin(sentence) {
+    let wordsLower = sentence.toLowerCase().replace(/[^a-z ]/gi, '').split(' ');
+    let strChanges = [];
+    let vowels = ["a","e","i","o","u"];
+    const changeWords = wordsLower.map((word,index) => { 
+        if(vowels.indexOf(word.charAt(0)) === -1) {   // if the first character is not vowel
+            let result = word.substring(1) + word[0].toLowerCase().concat("ay");
+            index === 0 ? strChanges.push(result[0].toUpperCase() + result.slice(1)) : strChanges.push(result);            
+        } else {
+            result = word.concat("way");
+            strChanges.push(result);
+        }     
+    });
+    sentence[sentence.length-1] === "." ? 
+    strChanges[strChanges.length-1] = strChanges[strChanges.length-1].concat(sentence[sentence.length-1]) : false;
+    return strChanges.join(' ');
+ }
+ console.log(pigLatin("Cats are great pets."));               //➞ "Atscay areway reatgay etspay."
+ //console.log(pigLatin("Tom got a small piece of pie"));      //➞ "Omtay otgay away allsmay iecepay ofway iepay."
+ //console.log(pigLatin("He told us a very exciting tale."));   //➞ "Ehay oldtay usway away eryvay excitingway aletay."
 // * Move the first letter of each word to the end of the word.
 // * Add "ay" to the end of the word.
 // * Words starting with a vowel (A, E, I, O, U) append "way" to the end instead.
