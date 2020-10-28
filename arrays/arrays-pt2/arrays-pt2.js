@@ -199,12 +199,12 @@ function evenNums(a) {
     for (let index = 1; index <= a; index++) {
         arr.push(index);
     }
-    // console.log(arr);            
     // check if array content % 2 == 0 is true. If yes, it is an even number. Even numbers goes to the new Array. (filter creates a new Array.)
     const result = arr.filter(arrContent => arrContent % 2 == 0);
     console.log(result);
 }
 // filter example #1
+// const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
 // const result = words.filter(word => word.length > 6);
 // a % 2 == 0  // = gerade
 

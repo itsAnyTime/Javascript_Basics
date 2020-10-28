@@ -141,3 +141,87 @@ const monthName = (month) => {
 console.log(monthName(3)); // "March"
 console.log(monthName(12)); // "December"
 console.log(monthName(6));// "June"
+
+console.log("------------6------filter---");
+
+// 6 Unlucky 13
+// Given a sorted array of numbers, remove any numbers that are divisible by 13. Return the amended array.
+
+// solution 1
+const unlucky13 = nums => nums.filter(array => array % 13 != 0);
+
+// solution 2 - grrrrrrr
+// function unlucky13(array) {
+// let arr = [];
+// for (i in array) {
+//     if (array[i] % 13 != 0) {
+//       arr.push(array[i]);
+//     }
+//   }
+// return arr;
+// }
+
+console.log(unlucky13([53, 182, 435, 591, 637])); // [53, 435, 591]
+// 182 and 637 are divisible by 13.
+console.log(unlucky13([24, 316, 393, 458, 1279])); // [24, 316, 393, 458, 1279]
+// No numbers in the array are divisible by 13.
+console.log(unlucky13([104, 351, 455, 806, 871])); // []
+// All numbers in the array are divisible by 13.
+
+// NR trys
+// remove example
+// var persons = ["Alice", "John", "Peter", "Clark", "Harry"];
+//     removed = persons.splice(2,2); // Removes the third and fourth elements
+
+// filter example #1
+// const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+// const result = words.filter(word => word.length > 6);
+// a % 2 == 0  // = gerade
+
+// filter example #2
+// function dictionary(str, array){
+//   let result = array.filter(element => { return element.startsWith(str); });
+//   return result;
+// }
+// console.log(dictionary("bu", ["button", "breakfast", "border"])); // Button
+
+console.log("------------7-------Math.max / Mat.min-------------");
+// 7
+// Difference of Max and Min Numbers in Array
+// Create a function that takes an array and returns the difference between the biggest and smallest numbers.
+
+function diffMaxMin(arr) {
+  return Math.max(...arr) - Math.min(...arr);
+}
+
+// or
+//const diffMaxMin = (arr) => Math.max(...arr) - Math.min(...arr);
+
+console.log(diffMaxMin([10, 4, 1, 4, -10, -50, 32, 21])); // 82
+// Smallest number is -50, biggest is 32.
+console.log(diffMaxMin([44, 32, 86, 19])); // 67
+// Smallest number is 19, biggest is 86.
+
+
+console.log("------------8-----for/in and .push-----or----.map-------");
+// 8 Negate the Array of Numbers
+// Given an array of numbers, negate all elements contained within.
+//  Negating a positive value -+n will return -n, because all +'s are removed.
+//  Negating a negative value --n will return n, because the first - turns the second minus into a +.
+
+const negate = (arr) => {
+  let save = [];
+      for(i in arr) {
+         save.push(arr[i] * (-1)); // ins array pushen: collect.push( value  );
+      }
+      return save;
+}
+
+// or
+// function negate(arr) {
+// 	return arr.map(val => -val); // map takes every element from aray and do something with that
+// }
+
+console.log(negate([1, 2, 3, 4])); // [-1, -2, -3, -4]
+console.log(negate([-1, 2, -3, 4])); // [1, -2, 3, -4]
+console.log(negate([])); // []
