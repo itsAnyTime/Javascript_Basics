@@ -337,7 +337,7 @@ function hasKey(obj, str) {
 
 // or in
 function hasKey(obj, str) {
-    return console.log(str in obj);
+    return console.log("here: ", str in obj);
 }
 
 // or Object / .includes
@@ -350,7 +350,7 @@ const hasKey2 = (obj, key) => obj[key]? true : false;  // output im return
 
 // or ternary with console.log other syntax
 function hasKey(obj, key) {
-	return console.log(obj[key] ? true : false);
+	return console.log("here:", obj[key] ? true : false);
 }
 
 // or .call
@@ -358,12 +358,12 @@ function hasKey(obj, key) {
 	return console.log(hasOwnProperty.call(obj,key));
 }
 
-// or .some
+// or .some (array)
 function hasKey(obj, key) {
 	return Object.keys(obj).some(item => item === key); // output im return
 }
 
-// or .keys
+// or .keys (array)
 function hasKey(obj, key) {
 	return console.log(Object.keys(obj).includes(key));
 }
@@ -373,7 +373,7 @@ hasKey({ craves: true, midnight: true, snack: true }, "morning") // false
 hasKey({ pot: 1, tot: 2, not: 3 }, "not") // true
 
 
-console.log("------------E------");
+console.log("------------E----to.Fixed--");
 
 // Planetary Weight Converter
 // In this challenge, you have to convert a weight weighed on a planet of the Solar System to the corresponding weight on another planet.
@@ -391,39 +391,82 @@ console.log("------------E------");
 // Neptune	11.15
 
 // Given a weight weighed on planetA, return the converted value for planetB rounded to the nearest hundredth.
+// Formel: Weight on Planets= (Weight on Earth/9.81m/s2) * gravitational force of the planet.
 
-function spaceWeights(params) {
-  
+const planets = {
+  Mercury:	3.7,
+  Venus:	8.87,
+  Earth:	9.81,
+  Mars:	3.711,
+  Jupiter:	24.79,
+  Saturn:	10.44,
+  Uranus:	8.69,
+  Neptune:	11.15
 }
 
-spaceWeights("Earth", 1, "Mars") // 0.38
-spaceWeights("Earth", 1, "Jupiter") // 2.53
-spaceWeights("Earth", 1, "Neptune") // 1.14
+function spaceWeights(planetA, weight, planetB) {
+  return (weight / planets[planetA] * planets[planetB]).toFixed(2);
+  // res = res.toFixed(2);
+  // return res;
+}
 
-console.log("------------F------");
+// in edabit it needs a parseFloat, cuz toFixed convert my numbers to a string, and Edabit wants a number. But other solutions are without parse. Don't have time to find out yet.
+// const planets = {
+//   Mercury:	3.7,
+//   Venus:	8.87,
+//   Earth:	9.81,
+//   Mars:	3.711,
+//   Jupiter:	24.79,
+//   Saturn:	10.44,
+//   Uranus:	8.69,
+//   Neptune:	11.15
+// }
+
+// function spaceWeights(planetA, weight, planetB) {
+//   let result = (weight / planets[planetA] * planets[planetB]).toFixed(2);
+// 	return parseFloat(result);
+// }
+
+console.log(spaceWeights("Earth", 1, "Jupiter")); // 2.53
+console.log(spaceWeights("Earth", 1, "Mars")); // 0.38
+console.log(spaceWeights("Earth", 1, "Neptune")); // 1.14
+
+console.log("------------F----Object Access / Zugriff--");
 
 
 // International Greetings
 // Suppose you have a guest list of students and the country they are from, stored as key-value pairs in an object.
 
-const GUEST_LIST = {
-  Randy: "Germany",
-  Karla: "France",
-  Wendy: "Japan",
-  Norman: "England",
-  Sam: "Argentina"
-}
+// const GUEST_LIST = {
+//   Randy: "Germany",
+//   Karla: "France",
+//   Wendy: "Japan",
+//   Norman: "England",
+//   Sam: "Argentina"
+// }
 
 // Write a function that takes in a name and returns a name tag, that should read:
-
-function greeting(name) {
-  return "Hi! I'm " + GUEST_LIST.name + " and I'm from " + GUEST_LIST.name(GUEST_LIST.name);
-}
 
 // "Hi! I'm [name], and I'm from [country]."
 // If the name is not in the object, return:
 // "Hi! I'm a guest."
 
-console.log(greeting("Randy")); // "Hi! I'm Randy, and I'm from Germany."
-console.log(greeting("Sam")); // "Hi! I'm Sam, and I'm from Argentina."
-console.log(greeting("Monti"));  //"Hi! I'm a guest."
+const GUEST_LIST = {
+    Randy: "Germany",
+    Karla: "France",
+    Wendy: "Japan",
+    Norman: "England",
+    Sam: "Argentina"
+  }
+
+function greeting(name) {
+     if (name.hasOwnProperty) {
+      return console.log("Hi! I'm ", name, " and I'm from ${GUEST_LIST[name]}");
+    } else {
+       return console.log("Hi! I'm a guest"); 
+     }
+}
+
+greeting("Randy"); // "Hi! I'm Randy, and I'm from Germany."
+greeting("Sam"); // "Hi! I'm Sam, and I'm from Argentina."
+greeting("Monti");  //"Hi! I'm a guest."
