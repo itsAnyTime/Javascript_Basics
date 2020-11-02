@@ -6,8 +6,9 @@ const student = {
     firstName: "John", 
     lastName: "Smith", 
     class: 12,
-    getfct: function() {
-        return console.log(this.firstName, this.lastName, "is a student in class ${this.class}."); // in the object with this
+    //getfct: function() {
+    getfct() {  // new in ES6 (without word function)
+        return console.log(this.firstName, this.lastName, `is a student in class ${this.class}.`); // in the object with this
         // instead of (outside)
         return console.log(student.firstName, student.lastName, "is a student in class 12.");
     }  
@@ -25,18 +26,21 @@ const person = ({
     city: "Hamburg",
     xyz: function xyz() {
         let output = this.name + " " + this.lastname + " is a " + this.age + " Year old " + this.job + " and is situated in " + this.city + ".";
-        console.log(output); // v
+        console.log(output); // Paris Turner is a 2,140,526 Year old Being a city and is situated in Hamburg.
         return output;
-      }
+      },
+    length() { return console.log("length fkt in object: " + Object.keys(this).length); }
   }) 
 
 person.xyz();
+person.length();
 
 // 3. Write a method to get the length of the person object.
 
 Object.size = function(obj) {
-    var size = 0, key;
-    for (key in obj) {
+    var size = 0;
+   // var key;
+    for (let key in obj) {
         if (obj.hasOwnProperty(key)) size++;
     }
     return console.log(size);
@@ -58,6 +62,17 @@ Object.size = function(obj) {
 Object.size(student);
 
 console.log("---------------------------howto----------------------------------");
+
+// This syntax: ${this.class}  needs to be between ` `
+// example:  console.log(`is a student in class ${this.class}.`); 
+
+// object syntax
+var literal = {
+    "Name": "value",
+    "Array": [],
+    "NestedObject": {}
+};
+
 
 // empty object
 const obj1 = {};
@@ -99,3 +114,5 @@ console.log(person.interests[1]);
 // removing 
 delete person.age;
 console.log(person.age);
+
+//Object.keys gives an array of object properties
