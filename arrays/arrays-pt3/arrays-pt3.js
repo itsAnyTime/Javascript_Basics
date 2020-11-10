@@ -90,13 +90,40 @@ console.log(wordRank("Check back tomorrow, man!"));
 console.log(wordRank("Today is Wednesday."));
 wordRank("Nancy is very pretty.") //"pretty"
 
-
+console.log("---------------6------.replace letter---indexOf---.split .map .hasOwnProperty .join----");
 // **6. c4n y0u r34d th15?**
 // Create a function that takes a string as an argument and returns a coded (h4ck3r 5p34k) version of the string. **NB:** for your program to work properly, the function should replace all 'a's with 4, 'e's with 3, 'i's with 1, 'o's with 0, and 's's with 5.
 
+function hackerSpeak(str) {
+    let newStr = str
+    .replace(/a/g, 4)
+    .replace(/s/g, 5)
+    .replace(/i/g, 1)
+    .replace(/o/g, 0)  
+	.replace(/e/g, 3)
+    return newStr;
+}
 
-// memo
-const hackerSpeak = (str) =>
+// or 
+function hackerSpeak(str) {
+    var chars = {'a':'4','e':'3','i':'1','o':'0','s':'5'};
+    str = str.replace(/[aeios]/g, letter => chars[letter]);
+    return str;
+  }
+
+// or with replace and indexOf
+const hackerSpeak = str => str.replace(/[oieas]/ig, x => [0,1,3,4,5][['o','i','e','a','s'].indexOf(x)])
+
+//or with .split .map .hasOwnProperty .join
+const hackerSpeak = (str) => str.split('').map(e => dict.hasOwnProperty(e) ? dict[e] : e).join('');
+const dict = {	'a': 4, 'e': 3, 'i': 1, 'o': 0, 's': 5 };
+
+console.log(hackerSpeak("javascript is cool")); // "j4v45cr1pt 15 c00l"
+console.log(hackerSpeak("programming is fun")); // "pr0gr4mm1ng 15 fun"
+console.log(hackerSpeak("become a coder")); // "b3c0m3 4 c0d3r"
+
+// memo's solution, with .replace, without return
+const hackerSpeak2 = (str) =>
   str
     .replace(/a/gi, 4)
     .replace(/e/gi, 3)
@@ -104,13 +131,9 @@ const hackerSpeak = (str) =>
     .replace(/o/gi, 0)
     .replace(/s/gi, 5)
     .replace(/g/gi, 9);
-console.log(hackerSpeak("Javascript is awesome"));
 
+console.log(hackerSpeak2("Javascript is awesome"));
 
-// Examples:
-// * hackerSpeak("javascript is cool") ➞ "j4v45cr1pt 15 c00l"
-// * hackerSpeak("programming is fun") ➞ "pr0gr4mm1ng 15 fun"
-// * hackerSpeak("become a coder") ➞ "b3c0m3 4 c0d3r"
 
 // ## Bonus Questions
 

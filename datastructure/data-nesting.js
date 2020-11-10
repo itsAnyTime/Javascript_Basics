@@ -9,11 +9,19 @@ let board = [
   [true, false],
 ];
 
-for (const key in board) {
-  if (board.hasOwnProperty(key)) {
-    console.log(board[key]);
+// outer loop is for the outer array
+for (var i=0; i<board.length; i++){
+  // inner loop is for the inner arrays
+  for (var j=0; j<board[i].length; j++){
+  // access each element of the 2D array
+  console.log(board[i][j]);
   }
-}
+  }
+
+// or with foreach
+Object.entries(board).forEach(([key, value]) => {
+    console.log(`${key}: ${value}`);
+});
 
 console.log("---------object with strings, array and method: shows array content-------------");
 
@@ -29,7 +37,9 @@ const doggo = {
   favFoods: ["meat", "cheese"], // 2.2
   print() {
     // 2.4
-    console.log(this.favFoods);
+    console.log(...this.favFoods);
+    // or
+    return console.log(Object.values(this.favFoods));
   },
 };
 
@@ -43,6 +53,7 @@ console.log(doggo.favFoods[1]);
 // 2.4
 doggo.print();
 
+console.log("---------------nested objects: syntax, access, add to array, change element, show content----------------------------");
 // #### 3.
 // * 3.1 Create an object called recipes.
 // * 3.2 Inside this object, you should create another object for ingredients and store ingredients as properties butter, sugar, flour etc. Each property should have a string as its value.
@@ -50,9 +61,8 @@ doggo.print();
 // * 3.4 Change the ingredient `sugar` to `brown sugar`.
 // * 3.5 Write a method in the recipes object that prints the value of each ingredient in the ingredients object.
 
-console.log("---------------nested objects: syntax, access, add to array, change element, show content----------------------------");
-// 3.1     "NestedObject": {}
 
+// 3.1     "NestedObject": {}
 const recipes = {
   "obj": { incredients: ["butter", "sugar", "flour"]},
   values() {

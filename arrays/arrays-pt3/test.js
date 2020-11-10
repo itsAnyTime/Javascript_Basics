@@ -10,11 +10,11 @@ console.log(b);
 
 
 // next: mapping + sqrt
-console.log("---------mapping + sqrt-----------");
+console.log("---------mapping + sqrt---square root--------");
 
 let number = [4,9,16,25];
 
-let x = number.map(Math.sqrt);  // Math is not working without map , it seems
+let x = number.map(Math.sqrt);  // Math is not working without map, it seems
 console.log(x);
 
 
@@ -41,8 +41,11 @@ found2 = array1.find(element => element > 10);
 console.log(found2); // 12
 
 
-console.log("-------------");  // TO CHECK for example
+console.log("----replace if else / shorter way for bool---------");  
 // next: shorter way for bool
+// if you have if bla bla = true else false, you can write return bla bla:
+//return (number === num) // same like if else - if return true, else return false
 
-//return (number === num)
-// same like if else - if return true, else return false
+console.log("------How to add spaces between array items-------");  
+var showtimes = ["1pm", "2pm", "3pm"];
+var showtimesAsString = showtimes.join(', '); // gives "1pm, 2pm, 3pm"

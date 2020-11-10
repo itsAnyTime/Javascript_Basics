@@ -410,7 +410,9 @@ function spaceWeights(planetA, weight, planetB) {
   // return res;
 }
 
-// in edabit it needs a parseFloat, cuz toFixed convert my numbers to a string, and Edabit wants a number. But other solutions are without parse. Don't have time to find out yet.
+// in edabit it needs a parseFloat, 'cuz toFixed convert my numbers to a string, but Edabit wants a number. But other solutions are without parse. Don't have time to find out yet.
+// https://edabit.com/challenge/CaWc84kuPBzCMEcR3
+
 // const planets = {
 //   Mercury:	3.7,
 //   Venus:	8.87,
@@ -459,14 +461,145 @@ const GUEST_LIST = {
     Sam: "Argentina"
   }
 
+// function greeting(name) {
+//    if (GUEST_LIST[name]) {
+//     return `Hi! I'm ` + name + `, and I'm from ${GUEST_LIST[name]}.`;  // syntax for apostophe
+//   } else {
+//      return "Hi! I'm a guest."; 
+//    }
+// }
+
+// or
+// function greeting(name) {
+//   return GUEST_LIST[name]?`Hi! I'm ${name}, and I'm from ${GUEST_LIST[name]}.`:"Hi! I'm a guest."
+// }
+
+// or 
+// function greeting(name) {
+// 	return Object.keys(GUEST_LIST).includes(name) ? 
+// 		`Hi! I'm ${name}, and I'm from ${GUEST_LIST[name]}.` : `Hi! I'm a guest.`
+// }
+
+// or
+// function greeting(name) {
+// 	return GUEST_LIST[name] ? 
+// 			`Hi! I'm ${name}, and I'm from ${GUEST_LIST[name]}.` : "Hi! I'm a guest."
+// }
+
+// or
+// function greeting(name) {
+// 	if(!GUEST_LIST.hasOwnProperty(name)){
+// 		return "Hi! I'm a guest."
+// 	}
+// 	else{
+// 		return "Hi! I'm " + name + ", and I'm from " + GUEST_LIST[name] + ".";
+// 	}
+// }
+
+// or
 function greeting(name) {
-     if (name.hasOwnProperty) {
-      return console.log("Hi! I'm ", name, " and I'm from ${GUEST_LIST[name]}");
-    } else {
-       return console.log("Hi! I'm a guest"); 
-     }
+	if(Object.keys(GUEST_LIST).find(x=>x==name)){
+		return `Hi! I'm ${name}, and I'm from ${GUEST_LIST[name]}.`;
+	}else{
+		return "Hi! I'm a guest.";
+	}
 }
 
-greeting("Randy"); // "Hi! I'm Randy, and I'm from Germany."
-greeting("Sam"); // "Hi! I'm Sam, and I'm from Argentina."
-greeting("Monti");  //"Hi! I'm a guest."
+console.log(greeting("Randy")); // "Hi! I'm Randy, and I'm from Germany."
+console.log(greeting("Sam")); // "Hi! I'm Sam, and I'm from Argentina."
+console.log(greeting("Monti"));  //"Hi! I'm a guest."
+
+
+console.log("-------------Destructuring Objects I---------------------");
+
+// ES6: Destructuring Objects I
+
+// In JavaScript, you can do basic object assignment like this:
+
+// const obj =  { one : 1, two : 2 }
+
+// let one = obj.one
+// let two = obj.two
+
+// However, with ES6 you can assign the variables in a much more succinct way. Use ES6 object destructuring to assign variables one and two to obj.one and obj.two respectively.
+
+// Although you can use let, var, or const for assignment, DO NOT use these in this challenge.
+// Notes
+
+//     Ignore the backticks `` (used for validation).
+//     Ignore the .toString() function (used for validation).
+
+// my solution
+let str = `( {one, two} = { one : 1, two : 2}).toString()`
+
+console.log("-------------Destructuring Arrays I---------------------");
+
+// ES6: Destructuring Arrays I
+
+// You can assign variables from arrays like this:
+
+// const arr = [1, 2, 3, 4, 5, 6]
+// let a = arr[0]
+// let b = arr[1]
+
+// console.log(a) // outputs 1
+// console.log(b) // outputs 2
+
+// With ES6, you can assign variables from arrays in a much more succinct way. Create variables a and b from the given array using the ES6 destructuring assignment syntax, where a === 1 and b === 2.
+
+// my solution
+const arr = [1, 2, 3, 4, 5, 6]
+let a = arr[0];
+let b = arr[1];
+
+console.log("-------------Destructuring Arrays II---------------------");
+
+// ES6: Destructuring Arrays II
+// You can assign variables from nested arrays like this:
+
+// const arr = ["cars", "planes", ["trains", ["motorcycles"]]]
+
+// let trans1 = arr[0]
+// let trans2 = arr[1]
+// let trans3 = arr[2][0]
+// let trans4 = arr[2][1][0]
+
+// console.log(trans1) // outputs "cars"
+// console.log(trans2) // outputs "planes"
+// console.log(trans3) // outputs "trains"
+// console.log(trans4) // outputs "motorcycles"
+
+// With ES6, you can assign variables from arrays in a much more succint way.
+
+// my solution:
+const arrDest = ["cars", "planes", ["trains", ["motorcycles"]]]
+
+// Fix the following using es6 destructuring
+// Only edit what's inside of [ trans1, trans2, trans3, trans4 ]
+let [ trans1, trans2, [trans3, [trans4]] ] = arrDest
+
+/*
+console.log(trans1) // should output "cars"
+console.log(trans2) // should output "planes"
+console.log(trans3) // should output "trains"
+console.log(trans4) // should output "motorcycles"
+*/
+
+console.log("-------------Destructuring Arrays III-------------");
+
+// ES6: Destructuring Arrays III
+
+// You can assign variables from arrays with destructuring like this:
+
+// const arr = ["eyes", "nose", "lips", "ears"]
+// let [eyes, nose, lips, ears] = arr
+
+// But you can also skip over items in the array being destructured.
+
+// my solution:
+// DO NOT change arr
+// DO NOT USE var [lips] = arr[2]
+// "eyes", "nose", and "ears" should not be assigned to anything
+const array = ["eyes", "nose", "lips", "ears"] 
+var [,, lips,] = array
+console.log(array);

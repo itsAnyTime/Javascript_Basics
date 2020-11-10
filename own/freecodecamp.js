@@ -127,3 +127,71 @@ function countdown(n){
   
   }
 console.log(countdown(10)); // [ 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 ]
+
+
+console.log("------------freeze Object-----------");
+// ES6: Prevent Object MutationPassed
+
+function freezeObj() {
+  'use strict';
+  const MATH_CONSTANTS = {
+    PI: 3.14
+  };
+  // Only change code below this line
+  Object.freeze(MATH_CONSTANTS);
+  // Only change code above this line
+  try {
+    MATH_CONSTANTS.PI = 99;
+  } catch(ex) {
+    console.log("error:", ex); // TypeError: Cannot assign to read only property 'PI' of object '#<Object>'
+  }
+  return MATH_CONSTANTS.PI;
+}
+const PI = freezeObj();
+
+// other example
+let obj = {
+  name:"FreeCodeCamp",
+  review:"Awesome"
+};
+Object.freeze(obj);
+obj.review = "bad"; // will be ignored. Mutation not allowed
+obj.newProp = "Test"; // will be ignored. Mutation not allowed
+console.log(obj); 
+// { name: "FreeCodeCamp", review:"Awesome"}
+
+console.log("-----------Default Parameter---------");
+
+// ES6: Set Default Parameters for Your FunctionsPassed
+// Only change code below this line
+const increment = (number, value=1) => number + value;
+// Only change code above this line
+
+
+
+console.log("-------------rest / args-----------");
+// ES6: Use the Rest Parameter with Function Parameters
+
+// before:
+// const summ = (x, y, z) => {
+//   const args = [x, y, z];
+//   return args.reduce((a, b) => a + b, 0);
+// }
+
+//after:
+const summ = (...args) => {
+  return args.reduce((a, b) => a + b, 0);
+}
+
+// other example:
+// const product = (n1, n2, n3) => {
+//   const args = [n1, n2, n3];
+//   return args.reduce((a, b) => a * b, 1);
+// }
+// console.log(product(2, 4, 6)); //48
+
+// Can be written as such
+const product = (...n) => {
+  return n.reduce((a, b) => a * b, 1);
+}
+console.log(product(2, 4, 6)); //48
