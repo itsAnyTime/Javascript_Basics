@@ -101,6 +101,7 @@ console.log("-----------RECURSIVE ----Recursion to Create a Countdown----");
 
 // Recursion to Create a Countdown / Countup
 // https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/use-recursion-to-create-a-countdown
+// We have defined a function called countdown with one parameter (n). The function should use recursion to return an array containing the integers n through 1 based on the n parameter. If the function is called with a number less than 1, the function should return an empty array. For example, calling this function with n = 5 should return the array [5, 4, 3, 2, 1]. Your function must use recursion by calling itself and must not use loops of any kind.
 
 // countup
 function countup(n) {
@@ -115,7 +116,7 @@ function countup(n) {
   console.log(countup(5)); // [ 1, 2, 3, 4, 5 ]
   
 
-// countdown
+// countdown unshift
 function countdown(n){
     if(n < 1) {
       return [];
@@ -124,9 +125,49 @@ function countdown(n){
         count.unshift(n)
         return count;
     }
-  
   }
 console.log(countdown(10)); // [ 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 ]
+
+// or splice countdown
+function countdown2(n) {
+  if (n < 1) {
+    return [];
+  } else {
+    const arr = countdown2(n - 1);
+    arr.splice(0, 0, n);
+    return arr;
+  }
+}
+console.log(countdown2(20));
+
+// or concat coutdown
+function countdown(n){
+  return n < 1 ? [] : [n].concat(countdown(n - 1));
+}
+
+// or rest countdown
+function countdown(n){
+  return n < 1 ? [] : [n, ...countdown(n - 1)];
+}
+
+console.log("---------------Recursive 2 -------------");
+// Basic JavaScript: Use Recursion to Create a Range of Numbers
+// https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/use-recursion-to-create-a-range-of-numbers
+
+// We have defined a function named rangeOfNumbers with two parameters. The function should return an array of integers which begins with a number represented by the startNum parameter and ends with a number represented by the endNum parameter. The starting number will always be less than or equal to the ending number. Your function must use recursion by calling itself and not use loops of any kind. It should also work for cases where both startNum and endNum are the same.
+
+function rangeOfNumbers(startNum, endNum) {
+  if(startNum === endNum) {
+    return [startNum];
+  } else {
+        const countArray = rangeOfNumbers(startNum, endNum - 1);
+        countArray.push(endNum);
+        // console.log(countArray)
+        return countArray; 
+  }    
+  };
+  console.log(rangeOfNumbers(3, 5)) // [3, 4, 5].
+
 
 
 console.log("------------freeze Object-----------");
@@ -157,8 +198,7 @@ let obj = {
 Object.freeze(obj);
 obj.review = "bad"; // will be ignored. Mutation not allowed
 obj.newProp = "Test"; // will be ignored. Mutation not allowed
-console.log(obj); 
-// { name: "FreeCodeCamp", review:"Awesome"}
+console.log(obj); // { name: "FreeCodeCamp", review:"Awesome"}
 
 console.log("-----------Default Parameter---------");
 

@@ -58,6 +58,53 @@ const {id, is_verified} = user;
 console.log(id); // 42
 console.log(is_verified); // true 
 
+// better resource:
+// Consider the following ES5 code:
+
+// const user = { name: 'John Doe', age: 34 };
+
+// const name = user.name; // name = 'John Doe'
+// const age = user.age; // age = 34
+
+// Here's an equivalent assignment statement using the ES6 destructuring syntax:
+
+// const { name, age } = user;
+// name = 'John Doe', age = 34
+
+
+//////////////////
+// other example: Use Destructuring Assignment to Extract Values from Objects
+
+const HIGH_TEMPERATURES = {
+    yesterday: 75,
+    today: 77,
+    tomorrow: 80
+  };
+  
+  // before (in ES5) we wrote:
+  //const today = HIGH_TEMPERATURES.today;
+  //const tomorrow = HIGH_TEMPERATURES.tomorrow;
+  
+  // after (ES6)
+  const { today, tomorrow } = HIGH_TEMPERATURES;  // destructuring assignment
+
+  ///////////////////////////////////////////////////
+  // next example with variable names:
+  
+// Replace the two assignments with an equivalent destructuring assignment. It should still assign the variables highToday and highTomorrow the values of today and tomorrow from the HIGH_TEMPERATURES object.
+
+  const HIGH_TEMPERATURES2 = {
+    yesterday: 75,
+    today: 77,
+    tomorrow: 80
+  };
+
+  // old
+  //const highToday = HIGH_TEMPERATURES.today;
+  //const highTomorrow = HIGH_TEMPERATURES.tomorrow; 
+  // ES6 new:
+  const { today: highToday, tomorrow: highTomorrow} = HIGH_TEMPERATURES2;
+  
 console.log("---------3--------");
 // #### 3. Parameters: Object Destructuring 
 // * Create an object with band/musician details e.g. name of the band/musician, greatest hit, nationality, genre etc. 

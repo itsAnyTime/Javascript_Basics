@@ -52,6 +52,22 @@ const MY_FUNC = nums => {  // only one parameter? -> no brackets
 };
 MY_FUNC(MEINARR); // 67
 
+
+// or
+function larger(a, b) {
+  return a > b ? a : b;
+}
+function maximum(array) {
+  let max = 0;
+  for (let num of array) {
+    max = larger(max, num);
+  }
+  return max;
+}
+list = [93,64,50,42,51];
+console.log(list); // [ 93, 64, 50, 42, 51 ]
+console.log(maximum(list)); // 93
+
 console.log("----------4");
 // 4. Find the Smallest
 // Create a function to find the smallest number in an array.

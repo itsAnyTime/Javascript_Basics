@@ -203,6 +203,10 @@ function evenNums(a) {
     const result = arr.filter(arrContent => arrContent % 2 == 0);
     console.log(result);
 }
+
+//filter syntax:
+//var newArray = arr.filter(callback(object[, ind[, array]])[, Arg])
+
 // filter example #1
 // const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
 // const result = words.filter(word => word.length > 6);
