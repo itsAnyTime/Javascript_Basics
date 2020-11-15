@@ -184,7 +184,7 @@ function freezeObj() {
   try {
     MATH_CONSTANTS.PI = 99;
   } catch(ex) {
-    console.log("error:", ex); // TypeError: Cannot assign to read only property 'PI' of object '#<Object>'
+    console.log("expected error:", ex); // TypeError: Cannot assign to read only property 'PI' of object '#<Object>'
   }
   return MATH_CONSTANTS.PI;
 }
@@ -235,3 +235,289 @@ const product = (...n) => {
   return n.reduce((a, b) => a * b, 1);
 }
 console.log(product(2, 4, 6)); //48
+
+
+// ES6: Use Destructuring Assignment to Assign Variables from Nested Objects
+// Replace the two assignments with an equivalent destructuring assignment. It should still assign the variables lowToday and highToday the values of today.low and today.high from the LOCAL_FORECAST object.
+
+const LOCAL_FORECAST = {
+    yesterday: { low: 61, high: 75 },
+    today: { low: 64, high: 77 },
+    tomorrow: { low: 68, high: 80 }
+  };
+  
+  // Only change code below this line
+  // before  
+  //const lowToday = LOCAL_FORECAST.today.low;
+  //const highToday = LOCAL_FORECAST.today.high;
+  
+  const { today: { low: lowToday, high: highToday }} = LOCAL_FORECAST;
+   
+  // Only change code above this line
+  
+  
+  // ES6: Use Destructuring Assignment to Assign Variables from Arrays
+  // Use destructuring assignment to swap the values of a and b so that a receives the value stored in b, and b receives the value stored in a.
+  
+  let a = 8, b = 6;
+  // Only change code below this line
+  
+  [a, b] = [b, a];
+  console.log(a);
+  
+  
+  
+  // ES6: Use Destructuring Assignment with the Rest Parameter to Reassign Array Elements
+  // Use destructuring assignment with the rest parameter to perform an effective Array.prototype.slice() so that arr is a sub-array of the original array source with the first two elements omitted.
+  
+  const source = [1,2,3,4,5,6,7,8,9,10];
+  function removeFirstTwo(list) {
+    "use strict";
+    // Only change code below this line
+    const [a,b,...arr] = list; // 1 wird a zugewiesen, 2 wird b zugewiesen, rest in ...rest
+    console.log(arr); // [ 3, 4, 5, 6, 7, 8, 9, 10 ]
+    console.log(a, b); // 1 2
+    // Only change code above this line
+    return arr;
+  }
+  const arr = removeFirstTwo(source);
+  
+  
+  
+  // ES6: Use Destructuring Assignment to Pass an Object as a Function's Parameters
+  // Use destructuring assignment within the argument to the function half to send only max and min inside the function.
+  
+  const stats = {
+    max: 56.78,
+    standard_deviation: 4.34,
+    median: 34.54,
+    mode: 23.87,
+    min: -0.75,
+    average: 35.85
+  };
+  
+  
+  //before
+  //const half = (stats) => (stats.max + stats.min) / 2.0; 
+  // now
+  const half = ({ max, min }) => (max + min) / 2.0; 
+  
+  
+  // ES6: Create Strings using Template Literals
+//   Use template literal syntax with backticks to create an array of list element (li) strings. Each list element's text should be one of the array elements from the failure property on the result object and have a class attribute with the value text-warning. The makeList function should return the array of list item strings.
+  
+//   Use an iterator method (any kind of loop) to get the desired output (shown below).
+  
+  [
+    '<li class="text-warning">no-var</li>',
+    '<li class="text-warning">var-on-top</li>',
+    '<li class="text-warning">linebreak</li>'
+  ]
+  
+  // Hint
+  //Iterate through each element of arr and add a new element consisting composed of a template literal using arr's elements to create the array failureItems.
+  
+  // my
+  const result = {
+    success: ["max-length", "no-amd", "prefer-arrow-functions"],
+    failure: ["no-var", "var-on-top", "linebreak"],
+    skipped: ["no-extra-semi", "no-dup-keys"]
+  };
+  function makeList(arr) {
+    // Only change code below this line 
+    let failureItems = [];
+    for(let key in arr) {
+      failureItems[key] = `<li class="text-warning">${arr[key]}</li>`;
+      console.log(failureItems);
+    }
+    // Only change code above this line
+  
+    return failureItems;
+  }
+  
+  const failuresList = makeList(result.failure);
+  
+  // or
+   const result2 = {
+    success: ["max-length", "no-amd", "prefer-arrow-functions"],
+    failure: ["no-var", "var-on-top", "linebreak"],
+    skipped: ["no-extra-semi", "no-dup-keys"]
+  };
+  function makeList(arr) {
+    "use strict";
+    // change code below this line
+    const failureItems = arr.map(item => `<li class="text-warning">${item}</li>`);
+    // change code above this line
+    return failureItems;
+  }
+  const failuresList2 = makeList(result2.failure);
+  
+  // ES6: Write Concise Object Literal Declarations Using Object Property Shorthand
+  
+  // Use object property shorthand with object literals to create and return an object with name, age and gender properties.
+  
+  const createPerson = (name, age, gender) => {
+    "use strict";
+    // Only change code below this line
+    return {
+    // before
+     // name: name,
+     // age: age,
+     // gender: gender
+     // now:
+     name, age, gender
+    };
+    // Only change code above this line
+  };
+  
+  
+  // ES6: Write Concise Declarative Functions with ES6
+  
+  // Refactor the function setGear inside the object bicycle to use the shorthand syntax described above.
+  
+  // Only change code below this line
+  const bicycle = {
+    gear: 2,
+    setGear: function(newGear) {
+      this.gear = newGear;
+    }
+  };
+  // Only change code above this line
+  bicycle.setGear(3);
+  console.log(bicycle.gear);
+  
+  // now
+  // Only change code below this line
+  const bicycle2 = {
+    gear: 2,
+    setGear(newGear) {
+      this.gear = newGear;
+    }
+  };
+  // Only change code above this line
+  bicycle2.setGear(3);
+  console.log(bicycle2.gear);
+  
+  
+  // ES6: Use class Syntax to Define a Constructor Function
+  // Use the class keyword and write a constructor to create the Vegetable class.
+  // The Vegetable class allows you to create a vegetable object with a property name that gets passed to the constructor.
+  
+  // Only change code below this line
+  
+  // Only change code above this line
+  
+//   const carrot = new Vegetable('carrot');
+//   console.log(carrot.name); // Should display 'carrot'
+  
+  
+  // now
+  // Only change code below this line
+  class Vegetable {
+      constructor(name) {
+          this.name = name;
+      }
+  }
+  // Only change code above this line
+  
+  const carrot = new Vegetable('carrot');
+  console.log(carrot.name); // Should display 'carrot'
+  
+  // ES6: Use getters and setters to Control Access to an Object
+  
+  // example:
+//     You can obtain values from an object and set the value of a property within an object.
+  
+//   These are classically called getters and setters.
+  
+//   Getter functions are meant to simply return (get) the value of an object's private variable to the user without the user directly accessing the private variable.
+  
+//   Setter functions are meant to modify (set) the value of an object's private variable based on the value passed into the setter function. This change could involve calculations, or even overwriting the previous value completely.
+  
+  class Book {
+    constructor(author) {
+      this._author = author;
+    }
+    // getter
+    get writer() {
+      return this._author;
+    }
+    // setter
+    set writer(updatedAuthor) {
+      this._author = updatedAuthor;
+    }
+  }
+  const novel = new Book('anonymous');
+  console.log(novel.writer);  // anonymous
+  novel.writer = 'newAuthor';
+  console.log(novel.writer);  // newAuthor
+  
+//   Notice the syntax used to invoke the getter and setter. They do not even look like functions. Getters and setters are important because they hide internal implementation details. Note: It is convention to precede the name of a private variable with an underscore (_). However, the practice itself does not make a variable private.
+  
+  
+  ///////////////
+  
+//   Use the class keyword to create a Thermostat class. The constructor accepts a Fahrenheit temperature.
+  
+//   Now create a getter and a setter in the class, to obtain the temperature in Celsius.
+  
+//   Remember that C = 5/9 * (F - 32) and F = C * 9.0 / 5 + 32, where F is the value of temperature in Fahrenheit, and C is the value of the same temperature in Celsius.
+  
+//   Note: When you implement this, you will track the temperature inside the class in one scale, either Fahrenheit or Celsius.
+  
+//   This is the power of a getter and a setter. You are creating an API for another user, who can get the correct result regardless of which one you track.
+  
+//   In other words, you are abstracting implementation details from the user.
+  
+  
+  // before
+  // Only change code below this line
+  
+  // Only change code above this line
+  
+//   const thermos = new Thermostat(76); // Setting in Fahrenheit scale
+//   let temp = thermos.temperature; // 24.44 in Celsius
+//   thermos.temperature = 26;
+//   temp = thermos.temperature; // 26 in Celsius
+  
+  
+  // now
+  // Only change code below this line
+  class Thermostat {
+      constructor(fahrenheit) {
+          this.fahrenheit = fahrenheit;
+      }
+      // getter
+      // Hint 3
+      // Create a get method that converts the Fahrenheit attribute to Celsius. Use the formula given to you.
+      get temperature() {
+        //  C = 5/9 * (F - 32);
+          return 5/9 * (this.fahrenheit - 32); 
+      }
+      // setter
+      // Hint 4:
+      // Create a set method of the same name as the get method. It should have a parameter that accepts celsius temperature. Convert it to fahrenheit, and set it to the attribute.
+      set temperature(celsius) {
+        //   F = C * 9.0 / 5 + 32;
+          this.fahrenheit = celsius * 9 / 5 + 32; 
+      }
+  }
+  // Only change code above this line
+  
+  const thermos = new Thermostat(76); // Setting in Fahrenheit scale
+  let tempp = thermos.temperature; // 24.44 in Celsius
+  thermos.temperature = 26;
+  tempp = thermos.temperature; // 26 in Celsius
+  
+  
+  // HTML
+  // ES6: Create a Module Script
+  // Add a script to the HTML document of type module and give it the source file of index.js
+  
+//   <html>
+//     <body>
+//       <script type="module" src="index.js"></script>
+//     </body>
+//   </html>
+  
+  // A script that uses this module type can now use the import and export features you will learn about in the upcoming challenges. 
