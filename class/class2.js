@@ -91,13 +91,14 @@ var obj = {
  d: 4
 };
 var output = select(arr, obj);
-console.log(output); // --> { a: 1, c: 3 }
-
+console.log(output); // --> { a: 1, c: 3 }  
+ 
 function select(arr, obj) {
     let newObj = {};
-    for (const key in obj) {
-        if(arr.includes(key)) {
-            newObj[key] = obj[key];
+    for (const objValue in obj) {
+        if(arr.includes(objValue)) {
+            newObj[objValue] = obj[objValue]; // element from arr and value from obj
+            console.log(newObj);
         }
     }
     return newObj;
@@ -110,15 +111,28 @@ function select(arr, obj) {
 // ·      If the array contains no elements less than 100, it should return an empty array.
 // ·      If the property at the given key is not an array, it should return an empty array.
 // ·      If there is no property at the key, it should return an empty array.
-var obj = {
- key: [1000, 20, 50, 500]
-};
-var output = getElementsLessThan100AtProperty(obj, "key");
-// console.log(output); // --> [20, 50]
 
-function getElementsLessThan100AtProperty(obj) {
-    
+var obj = {
+ bla: [1000, 20, 50, 500], // [20, 50]
+ bli: [], // []
+ blubb: [300,200,500], // []
+ blob: "not an array", // []
+ blok: "" // []
+};
+var output = getElementsLessThan100AtProperty(obj, "blok");  // test empty with "bli", "blubb", "blob" or "blok"
+console.log(output); // --> "bla" [20, 50]
+
+function getElementsLessThan100AtProperty(obj, arr) { 
+    if(Array.isArray(obj[arr])) { // test if arr is a array
+        for (const key in obj) {
+                if (arr == key) {
+                    return obj[key].filter(values => values < 100);
+                }
+            }
+        } else return []
 }
+
+
 // 7. Write a function called “getOddLengthWordsAtProperty”.
 // Given an object and a key, “getOddLengthWordsAtProperty” returns an array containing all the odd length word elements of the array located at the given key.
 // Notes:
@@ -166,6 +180,6 @@ var obj = {
 var output = getEvenLengthWordsAtProperty(obj, "key");
 // console.log(output); // --> [‘long’, ‘game’]
 
-function getEvenLengthWordsAtProperty(obj) {
+function getEvenLengthWordsAtProperty(obj, key) {
     
 }
