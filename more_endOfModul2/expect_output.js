@@ -1,3 +1,6 @@
+// See screenshots for Datagrams (date between 16. and 17.11.20)
+
+
 // Test Your Predictions: Properties
 // What will happen when you run the following code snippets, and why? Write down your answers, then check if they are correct.
 // 1.
