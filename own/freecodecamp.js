@@ -512,6 +512,9 @@ const LOCAL_FORECAST = {
   
   // HTML
   // ES6: Create a Module Script
+
+  // JavaScript started with a small role to play on an otherwise mostly HTML web. Today, it’s huge, and some websites are built almost entirely with JavaScript. In order to make JavaScript more modular, clean, and maintainable; ES6 introduced a way to easily share code among JavaScript files. This involves exporting parts of a file for use in one or more other files, and importing the parts you need, where you need them. In order to take advantage of this functionality, you need to create a script in your HTML document with a type of module. 
+
   // Add a script to the HTML document of type module and give it the source file of index.js
   
 //   <html>
@@ -521,3 +524,51 @@ const LOCAL_FORECAST = {
 //   </html>
   
   // A script that uses this module type can now use the import and export features you will learn about in the upcoming challenges. 
+
+
+  // ES6: Use export to Share a Code Block
+
+  // Imagine a file called math_functions.js that contains several functions related to mathematical operations. One of them is stored in a variable, add, that takes in two numbers and returns their sum. You want to use this function in several different JavaScript files. In order to share it with these other files, you first need to export it.
+
+  // There are two string-related functions in the editor. Export both of them using the method of your choice.
+
+  // given code and solution
+  const uppercaseString = (string) => {
+    return string.toUpperCase();
+  }
+  
+  const lowercaseString = (string) => {
+    return string.toLowerCase()
+  }
+  
+  // export { uppercaseString, lowercaseString }  // (not working here)
+
+
+
+  // ES6: Reuse JavaScript Code Using import 
+
+  // Add the appropriate import statement that will allow the current file to use the uppercaseString and lowercaseString functions you exported in the previous lesson. These functions are in a file called string_functions.js, which is in the same directory as the current file. 
+
+  //example
+  // import { add, subtract, … all what you need } from './math_functions.js';			
+
+  //solution
+//   import { uppercaseString, lowercaseString } from './string_functions.js';
+// // Only change code above this line
+
+// uppercaseString("hello");
+// lowercaseString("WORLD!");
+
+
+
+  // ES6: Use * to Import Everything from a File 
+
+  // The code in this file requires the contents of the file: string_functions.js, that is in the same directory as the current file. Use the import * as syntax to import everything from the file into an object called stringFunctions.
+
+  //solution
+
+//   import * as stringFunctions from "./string_functions.js";
+// // Only change code above this line
+
+// stringFunctions.uppercaseString("hello");
+// stringFunctions.lowercaseString("WORLD!");
