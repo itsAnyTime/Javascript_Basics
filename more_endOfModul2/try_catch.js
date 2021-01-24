@@ -18,11 +18,12 @@ class Dog {
     this.name = name;
   }
 }
-Dog.prototype.bark = function () {  // prototype was missing, to get FIDO bark
+Dog.prototype.bark = function () {
+  // prototype was missing, to get FIDO bark
   console.log(`${this.name} says woof`);
 };
 let fido = new Dog("fido");
-fido.bark(); 
+fido.bark();
 // Edit the code to make fido bark.
 
 console.log(
@@ -39,19 +40,81 @@ function getMonthName(monthNumber) {
   if (monthNumber <= 12) {
     return console.log("Okay");
   } else {
-    throw "InvalidMonthNo"; // throw keyword is used here
+    throw new Error("InvalidMonthNo"); // throw keyword is used here
   }
 }
 try {
   // statements to try
-  monthNumber = getMonthName(monthNumber); // function could throw exception
 } catch (e) {
-  monthNumber = "unknown";
-  console.log("Not a valid month");
-  // logMyErrors(e); // pass exception object to error handler (i.e. your own function)
+  // console.log("Not a valid month", e);
+  // logMyErrors(e);
 }
 
-getMonthName(12); // -> Invalid Month Number!
+getMonthName(15); // -> Invalid Month Number!
+// getMonthName(14); // -> valid Month Number!
+
+// function getMonthName(num) {
+//   const monthOfYear = [
+//     "January",
+//     "February",
+//     "March",
+//     "April",
+//     "May",
+//     "June",
+//     "July",
+//     "August",
+//     "September",
+//     "October",
+//     "November",
+//     "December",
+//   ];
+//   let nums = [1, 2, 3];
+//   if (!nums.includes(num)) {
+//     throw {
+//       name: "Input Error",
+//       message: "Invalid Input",
+//     };
+//   }
+//   return monthOfYear[num - 1];
+// }
+// try {
+//   getMonthName(5);
+// } catch (error) {
+//   console.log(error.message);
+//   console.log(error.name);
+// }
+
+function getMonthName(num) {
+  const monthOfYear = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  ];
+  const numOfMonth = num - 1;
+  if (num <= 0) {
+    return `no corresponding month`;
+  } else if (num >= 1 && num <= 12) {
+    return monthOfYear[numOfMonth];
+  } else {
+    throw new Error("Invalid month number!");
+  }
+}
+try {
+  getMonthName(2);
+} catch (e) {
+  console.log("Error!!!!",e);
+  // expected output: "Invalid month number!"
+}
+// console.log(getMonthName(16));
 
 // resorces:
 // function getMonthName(mo) {
@@ -73,11 +136,25 @@ getMonthName(12); // -> Invalid Month Number!
 //     // logMyErrors(e); // pass exception object to error handler (i.e. your own function)
 //   }
 
+//   console.log(getMonthName(13));
+
+console.log("_____________________________________3_____________");
 // 3. Reverse
 // Create a function that reverses a string. Throw a custom error if the user inputs another type as an argument.
 // Example
 // reverseString(2019) -> ERROR! This is not a string!
 
+// int reverse -> toString, dann splitten, dann reversen, dann join + ne Prise Mathe
+function reverseString(num) {
+  return (
+    parseFloat(num.toString().split("").reverse().join("")) * Math.sign(num)
+    //return (num.toString().split('').reverse().join('') //* Math.sign(num)  // floatparse deletes minus, deswegen noch * math.sign(num)
+  );
+}
+
+console.log(reverseString(-2019)); // ERROR! This is not a string!
+
+console.log("_____________________________________4_____________");
 // 4. Comparing Arrays
 // Create a function that returns true if two arrays contain identical values, and false otherwise.
 // Someone wrote the following code:

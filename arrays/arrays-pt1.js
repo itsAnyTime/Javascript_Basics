@@ -63,9 +63,10 @@ console.log(worldCities.toString());
 // + separated
 console.log(worldCities.join('+'));
 
-// 1. Reverse string  
+// 1. Reverse string  //?
 function reverseString(str) {
-    return (str === '') ? '' : reverseString(str.substr(1)) + str.charAt(0);
+    return (str === '') ? '' : reverseString(str.substr(1)) + str.charAt(0); 
+    // 1 im substr: jeder Buchstabe, 2: jeder 2., 3: jeder 3. usw
 }
 console.log(reverseString("hello world"));
 

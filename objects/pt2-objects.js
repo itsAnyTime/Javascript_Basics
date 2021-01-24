@@ -96,7 +96,7 @@ maximumScore([
   { tile: "D", score: 2 },
   { tile: "A", score: 1 },
   { tile: "E", score: 1 },
-]);
+]);   // shorter: 28
 
 // with arrow fct
 const maximumScore2 = (obj) =>
