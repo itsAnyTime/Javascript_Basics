@@ -41,7 +41,20 @@ function getMonthName(monthNumber) {
     return console.log("Okay");
   } else {
     throw new Error("InvalidMonthNo"); // throw keyword is used here
+// Dilshods
+
+// Example
+// getMonthName(15) -> Invalid Month Number!
+function getMonthName(num) {
+  const monthOfYear = ["January", "February", "March"];
+  let nums = [1, 2, 3];
+  if (!nums.includes(num)) {
+    throw {
+      name: "Input Error",
+      message: "Invalid Input",
+    };
   }
+  return monthOfYear[num - 1];
 }
 try {
   // statements to try
@@ -51,38 +64,38 @@ try {
 }
 
 getMonthName(15); // -> Invalid Month Number!
-// getMonthName(14); // -> valid Month Number!
+// getMonthName(5); // -> valid Month Number!
 
-// function getMonthName(num) {
-//   const monthOfYear = [
-//     "January",
-//     "February",
-//     "March",
-//     "April",
-//     "May",
-//     "June",
-//     "July",
-//     "August",
-//     "September",
-//     "October",
-//     "November",
-//     "December",
-//   ];
-//   let nums = [1, 2, 3];
-//   if (!nums.includes(num)) {
-//     throw {
-//       name: "Input Error",
-//       message: "Invalid Input",
-//     };
-//   }
-//   return monthOfYear[num - 1];
-// }
-// try {
-//   getMonthName(5);
-// } catch (error) {
-//   console.log(error.message);
-//   console.log(error.name);
-// }
+function getMonthName(num) {
+  const monthOfYear = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  let nums = [1, 2, 3];
+  if (!nums.includes(num)) {
+    throw {
+      name: "Input Error",
+      message: "Invalid Input",
+    };
+  }
+  return monthOfYear[num - 1];
+}
+try {
+  getMonthName(5);
+} catch (error) {
+  console.log(error.message); // Invalid Input
+  console.log(error.name); // Input Error
+}
 
 function getMonthName(num) {
   const monthOfYear = [
@@ -109,32 +122,68 @@ function getMonthName(num) {
   }
 }
 try {
-  getMonthName(2);
+  getMonthName(22);
 } catch (e) {
-  console.log("Error!!!!",e);
-  // expected output: "Invalid month number!"
+  console.log("Error!!!!",e); // "Invalid month number!"
 }
 // console.log(getMonthName(16));
 
+///////////////////// mine
+
+// function getMonthName(monthNumber) {
+//   if (monthNumber <= 12) {
+//     return console.log("Okay");
+//   } else {
+//     throw new Error("InvalidMonthNo"); // throw keyword is used here. without new Error, it shows only the console.log
+//   }
+// }
+// try {
+//   // statements to try!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//   getMonthName(15); // ->  Error! Error: InvalidMonthNo
+// } catch (e) {
+//   console.log("Error!", e);
+  // logMyErrors(e); // pass exception object to error handler (i.e. your own function)
+// }
+
+// NOT NEEDED HERE; PUT IT TO TRY BLOCK:
+// getMonthName(12); // -> Valid Month Number!
+// getMonthName(15); // -> Invalid Month Number!
+
 // resorces:
 // function getMonthName(mo) {
-//     mo = mo - 1; // Adjust month number for array index (1 = Jan, 12 = Dec)
-//     let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul',
-//                   'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-//     if (months[mo]) {
-//       return months[mo];
-//     } else {
-//       throw 'InvalidMonthNo'; // throw keyword is used here
-//     }
+//   mo = mo - 1; // Adjust month number for array index (1 = Jan, 12 = Dec)
+//   let months = [
+//     "Jan",
+//     "Feb",
+//     "Mar",
+//     "Apr",
+//     "May",
+//     "Jun",
+//     "Jul",
+//     "Aug",
+//     "Sep",
+//     "Oct",
+//     "Nov",
+//     "Dec",
+//   ];
+//   if (months[mo]) {
+//     console.log(months[mo]);
+//     return months[mo];
+//   } else {
+//     throw "InvalidMonthNo"; // throw keyword is used here
 //   }
+// }
 
-//   try { // statements to try
-//     monthName = getMonthName(myMonth); // function could throw exception
-//   }
-//   catch (e) {
-//     monthName = 'unknown';
-//     // logMyErrors(e); // pass exception object to error handler (i.e. your own function)
-//   }
+// try {
+//   // statements to try
+//   monthName = getMonthName(4); // function could throw exception
+// } catch (e) {
+//   console.log("here", e);
+  // logMyErrors(e); // pass exception object to error handler (i.e. your own function)
+// }
+
+// getMonthName(12); // -> Valid Month Number!
+// getMonthName(15); // -> Invalid Month Number!
 
 //   console.log(getMonthName(13));
 
@@ -173,10 +222,23 @@ console.log("_____________________________________4_____________");
 // ·      compareArrays([4, 5, 6], [4, 5, 6]) ➞ true
 // ·      compareArrays([4, 7, 6], [4, 5, 6]) ➞ false
 
+function compareArrays(arr1, arr2) {
+  if (arr1 === arr2) {
+    return console.log(true);
+   } else {
+    return console.log(false);
+   }
+}
+compareArrays([1, 2], [1, 3]) // false
+compareArrays([1, 2], [1, 2]) // true
+compareArrays([4, 5, 6], [4, 5, 6]) // true
+compareArrays([4, 7, 6], [4, 5, 6]) // false
+
 // 5. Recursion
 // The following code should get the sum of the array items, but it does not work. Fix it so that it will.
-// function sum(array) {
-//     let result = array.pop() + sum(array);
-//     return result;
-// }
-// console.log(sum([1, 2, 3]));
+function sum(array) {
+    let result = array.pop() + sum(array);
+    console.log(result);
+    return result;
+}
+console.log(sum([1, 2, 3]));

@@ -16,7 +16,8 @@ function orderAmount(arr) {
   var val = arr.reduce(function (previousValue, currentValue) {
     return { amount: previousValue.amount + currentValue.amount };
   });
-  console.log("Orders", val);
+  console.log("Orders", val); // Orders { amount: 1075 }
+
 }
 orderAmount(orders);
 
